@@ -1,6 +1,8 @@
+import Main from "@/layouts/Main";
+
 const App = () => {
   return (
-    <span>Hello world</span>
+    <Main />
   )
 }
 
