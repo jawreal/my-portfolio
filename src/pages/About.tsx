@@ -2,7 +2,7 @@ import BacklashBg from "@/components/BacklashBg";
 
 const About = () => {
   return (
-  <section className="w-full flex-1 px-6 flex flex-col md:px-20">
+  <section className="w-full flex-1 px-6 flex flex-col md:px-20" id="about" >
      <div className="flex-1 border-x dark:border-slate-800 flex flex-col gap-y-4 px-4">
        <div className="w-full pt-5 md:max-w-[25rem]">
          <h5 className="font-mono text-slate-500 dark:text-slate-400">ABOUT JORELL,</h5> 
@@ -16,7 +16,7 @@ const About = () => {
             </p>
           </div>
        </div>
-       <div className="h-full mt-3 md:mt-1">
+       <div className="h-full mt-5 md:mt-1">
          <BacklashBg height="after:h-64 after:border-t"> 
          </BacklashBg>
          <div className="rounded-md relative z-10 w-full md:w-72 md:h-72 transform -translate-y-3 md:-translate-y-6 ml-auto">

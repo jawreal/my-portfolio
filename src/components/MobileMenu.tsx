@@ -30,7 +30,7 @@ const MobileMenu = (props: IProps) => {
        </DrawerClose> 
      </div>
      <div className="ml-2 pt-4">
-      <NavLinks isOpen={props?.open ?? false} />
+      <NavLinks {...props} />
      </div>
      </DrawerContent>
    </Drawer>
