@@ -13,7 +13,7 @@ const NavLinks = ({ isOpen }: IProps) => {
      {
        links.map((link: string, idx: number) => (
        <li key={idx}>
-         <Button variant="ghost" className="text-2xl font-extrabold md:font-normal mb-2 md:mb-0 md:text-base">
+         <Button variant="ghost" className="text-2xl font-extrabold md:font-normal mb-2 md:mb-0 md:text-base active:bg-transparent hover:bg-transparent">
            {link.toUpperCase()}
          </Button>
          
