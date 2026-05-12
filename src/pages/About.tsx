@@ -1,4 +1,6 @@
 import BacklashBg from "@/components/BacklashBg";
+import ImageBadge from "@/components/ImageBadge";
+import { Fragment } from "react";
 
 const About = () => {
   return (
@@ -6,15 +8,19 @@ const About = () => {
      <div className="flex-1 border-x dark:border-slate-800 flex flex-col md:flex-row gap-y-4 px-4 md:gap-x-4">
        <div className="h-full mt-5 md:self-center md:order-2 md:ml-auto">
          <div className="rounded-md relative w-full md:w-72 md:h-72">
-           <img src="./myself.jpg" className="w-full h-full object-cover rounded-md" />
-           <div className="rounded-md bg-slate-950 dark:bg-slate-800 p-2 font-mono absolute top-1 left-0 transform -translate-x-3 -translate-y-4 text-xs border border-dashed dark:border-slate-700 text-slate-200 flex items-center gap-x-1">
-              <span className="h-1 w-1 rounded-full bg-purple-500"></span>
-              FULLSTACK
-            </div>
-            <div className="rounded-md bg-slate-950 dark:bg-slate-800 p-2 font-mono absolute bottom-1 right-0 transform translate-x-3 translate-y-4 text-xs border border-dashed dark:border-slate-700 text-slate-200 flex items-center gap-x-1">
-              <span className="h-1 w-1 rounded-full bg-purple-500"></span>
-              AVAILABLE
-            </div>
+           <img src="./me2.jpg" className="w-full h-full object-cover rounded-md border-2 border-slate-500 dark:border-slate-700" />
+           <ImageBadge position="top-1 left-0 transform -translate-x-3 -translate-y-4">
+              <Fragment>
+                <span className="h-1 w-1 rounded-full bg-purple-500"></span>
+                <span>FULL-STACK</span>
+              </Fragment>
+            </ImageBadge>
+            <ImageBadge position="bottom-1 right-0 transform translate-x-3 translate-y-4">
+              <Fragment>
+                <span className="h-1 w-1 rounded-full bg-purple-500"></span>
+                <span>AVAILABLE</span>
+              </Fragment>
+            </ImageBadge>
           </div>
        </div> 
        <div className="w-full pt-2 md:max-w-[25rem]">
