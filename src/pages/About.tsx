@@ -4,7 +4,8 @@ import { Fragment } from "react";
 
 const About = () => {
   return (
-  <section className="w-full flex-1 px-6 flex flex-col md:px-20" id="about" >
+  <section className="w-full flex-1 px-6 flex flex-col md:px-20 border-b" id="about" >
+     <BacklashBg height="after:h-60 z-[-1] md:hidden"/>
      <div className="flex-1 border-x dark:border-slate-800 flex flex-col md:flex-row gap-y-4 px-4 md:gap-x-4">
        <div className="h-full mt-5 md:self-center md:order-2 md:ml-auto">
          <div className="rounded-md relative w-full md:w-72 md:h-72">
@@ -23,7 +24,7 @@ const About = () => {
             </ImageBadge>
           </div>
        </div> 
-       <div className="w-full pt-2 md:max-w-[25rem]">
+       <div className="w-full pt-2 md:max-w-[25rem] mb-5">
          <h5 className="font-mono text-slate-500 dark:text-slate-400">ABOUT JORELL</h5> 
           <h1 className="text-4xl md:text-5xl font-extrabold dark:text-slate-200 mt-2 mb-4">The Developer Behind the Code</h1>
           <div className="text-slate-500 dark:text-slate-400 flex flex-col gap-y-3">
