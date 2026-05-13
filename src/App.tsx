@@ -1,5 +1,5 @@
 import Main from "@/layouts/Main";
-import useDarkMode from "@/hooks/useDarkMode";
+import { useDarkMode } from "@/hooks/useDarkMode";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App = () => {

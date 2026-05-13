@@ -1,23 +1,28 @@
 import { useEffect, useState } from "react";
 
+type Preset = "dark" | "light" | "system";
+
 const useDarkMode = () => {
-  const [darkMode, setDarkMode] = useState<boolean>(() => {
-    return localStorage.getItem("theme") === "dark";
+  const [theme, _] = useState<Preset>(() => {
+    return localStorage.getItem("theme") as Preset ?? "system";
   });
 
   useEffect(() => {
-    if (!darkMode) {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      document.documentElement.classList.add('dark');
-      localStorage.setItem("theme", "dark");
+    const html = document.documentElement;
+    if (theme === "dark") {
+      html.classList.add(theme);
+    } else if (theme === "light"){
+      html.classList.remove('dark');
     } else {
-      document.documentElement.setAttribute('data-theme', 'light');
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem("theme", "light");
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        html.classList.add("dark");
+      } else {
+        html.classList.remove("dark");
+      }
     }
-  }, [darkMode]);
+  }, [theme]);
 
-  return [darkMode, setDarkMode] as const;
+  return [theme] as const;
 };
 
-export default useDarkMode;
+export { useDarkMode, type Preset };

@@ -1,11 +1,9 @@
 import {
   Drawer,
-  DrawerClose,
   DrawerContent,
   DrawerDescription,
   DrawerHeader,
   DrawerTitle,
-  DrawerTrigger,
 } from "@/components/ui/drawer"
 import NavLinks from "@/layouts/NavLinks"
 import { Button } from "@/components/ui/button"
@@ -18,19 +16,24 @@ interface IProps {
 }
 
 const MobileMenu = (props: IProps) => {
+  const onCloseDrawer = React.useCallback(() => props.onOpenChange(false), [props]);
+  
   return (
   <Drawer {...props} direction="top">
    <DrawerContent className="rounded-none h-full border-0">
+     <DrawerHeader className="hidden">
+       {/* Required to render but just hidden because it's not necessary here */}
+       <DrawerTitle />
+       <DrawerDescription />
+     </DrawerHeader>
      <div className="w-full flex items-center p-4">
        <h1 className="text-4xl ml-2 font-extrabold dark:text-slate-200">JR</h1> 
-       <DrawerClose className="ml-auto">
-         <Button variant="ghost">
-           <X />
-         </Button>
-       </DrawerClose> 
+       <Button variant="ghost" className="ml-auto" onClick={onCloseDrawer}>
+         <X />
+       </Button>
      </div>
-     <div className="ml-2 pt-4">
-      <NavLinks {...props} />
+     <div className="px-2 pt-4">
+       <NavLinks {...props} />
      </div>
      </DrawerContent>
    </Drawer>

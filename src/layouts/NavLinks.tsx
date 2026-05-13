@@ -1,3 +1,4 @@
+import SystemTheme from "@/components/SystemTheme";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useNavigate } from "react-router-dom";
@@ -18,7 +19,7 @@ const NavLinks = ({ open, onOpenChange }: IProps) => {
      navigate(`/${id}`);
      
      if(onOpenChange) {
-       onOpenChange(); // Close the drawer
+       onOpenChange(false); // Close the drawer
      }
      
      setTimeout(() => {
@@ -44,10 +45,13 @@ const NavLinks = ({ open, onOpenChange }: IProps) => {
          </Button>
          
          {/* Don't show this element at last */}
-         <hr className={cn("ml-4 mr-6 md:hidden", link === "contact" && "hidden")}/>
+         <hr className="ml-4 mr-6 md:hidden opacity-80"/>
        </li>
        ))
       }
+      <li className="md:hidden px-4 mt-2">
+        <SystemTheme />
+      </li>
     </ul> 
    )
 }
