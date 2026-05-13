@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { useNavigate } from "react-router-dom";
 import * as React from "react";
 
-const links: string[] = ["about", "skills", "projects", "contact"];
+const links: string[] = ["about", "projects", "skills", "contact"];
 
 interface IProps {
   open?: boolean; // This is a state from mobile menu.

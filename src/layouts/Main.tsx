@@ -1,5 +1,6 @@
 import Navbar from "@/layouts/Navbar";
 import About from "@/pages/About";
+import Projects from "@/pages/Projects";
 import BacklashBg from "@/components/BacklashBg";
 import HeroSection from "@/pages/HeroSection";
 
@@ -14,6 +15,7 @@ const Main = () => {
       <HeroSection />
     </main>
     <About /> 
+    <Projects />
   </div>
   )
 }
