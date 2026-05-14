@@ -1,6 +1,7 @@
 import Navbar from "@/layouts/Navbar";
 import About from "@/pages/About";
 import Projects from "@/pages/Projects";
+import Skills from "@/pages/Skills";
 import BacklashBg from "@/components/BacklashBg";
 import HeroSection from "@/pages/HeroSection";
 
@@ -16,6 +17,7 @@ const Main = () => {
     </main>
     <About /> 
     <Projects />
+    <Skills />
   </div>
   )
 }
