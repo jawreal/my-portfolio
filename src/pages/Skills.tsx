@@ -17,7 +17,8 @@ import {
   SiShadcnui,
   SiReactquery,
   SiGit,
-  SiGithub
+  SiGithub, 
+  SiPostman
 } from 'react-icons/si';
 
 interface IStacks {
@@ -26,25 +27,32 @@ interface IStacks {
   bgColor: string;
 }
 
-const stacks: IStacks[] = [
-  { icon: SiHtml5, text: "HTML", bgColor: "#E34F26" },
-  { icon: FaCss3Alt, text: "CSS", bgColor: "#1572B6" },
-  { icon: SiJavascript, text: "JavaScript", bgColor: "#F7DF1E" },
-  { icon: SiTypescript, text: "TypeScript", bgColor: "#3178C6" },
-  { icon: SiTailwindcss, text: "Tailwind CSS", bgColor: "#06B6D4" },
-  { icon: SiReact, text: "React", bgColor: "#61DAFB" },
-  { icon: SiNodedotjs, text: "Node.js", bgColor: "#339933" },
-  { icon: SiExpress, text: "Express.js", bgColor: "#000000" },
-  { icon: SiVite, text: "Vite", bgColor: "#646CFF" },
-  { icon: SiSupabase, text: "Supabase", bgColor: "#3ECF8E" },
-  { icon: SiPostgresql, text: "PostgreSQL", bgColor: "#4169E1" },
-  { icon: SiMongodb, text: "MongoDB", bgColor: "#47A248" },
-  { icon: SiShadcnui, text: "shadcn/ui", bgColor: "#000000" },
-  { icon: SiReactquery, text: "TanStack", bgColor: "#FF4154" },
-  { icon: SiGit, text: "Git", bgColor: "#F05032" },
-  { icon: GiBearFace, text: "Zustand", bgColor: "#443E38" },
-  { icon: SiGithub, text: "GitHub", bgColor: "#181717" }
-];
+const stacks: Record<string, IStacks[]> = {
+  frontend: [
+    { icon: SiHtml5, text: "HTML", bgColor: "#E34F26" },
+    { icon: FaCss3Alt, text: "CSS", bgColor: "#1572B6" },
+    { icon: SiJavascript, text: "JavaScript", bgColor: "#F7DF1E" },
+    { icon: SiTypescript, text: "TypeScript", bgColor: "#3178C6" },
+    { icon: SiTailwindcss, text: "Tailwind CSS", bgColor: "#06B6D4" },
+    { icon: SiReact, text: "React", bgColor: "#61DAFB" },
+    { icon: SiVite, text: "Vite", bgColor: "#646CFF" },
+    { icon: SiShadcnui, text: "shadcn/ui", bgColor: "#000000" },
+    { icon: SiReactquery, text: "TanStack", bgColor: "#FF4154" },
+    { icon: GiBearFace, text: "Zustand", bgColor: "#443E38" }
+  ],
+  backend: [
+    { icon: SiNodedotjs, text: "Node.js", bgColor: "#339933" },
+    { icon: SiExpress, text: "Express.js", bgColor: "#000000" },
+    { icon: SiSupabase, text: "Supabase", bgColor: "#3ECF8E" },
+    { icon: SiPostgresql, text: "PostgreSQL", bgColor: "#4169E1" },
+    { icon: SiMongodb, text: "MongoDB", bgColor: "#47A248" }
+  ],
+  tools: [
+    { icon: SiGit, text: "Git", bgColor: "#F05032" },
+    { icon: SiGithub, text: "GitHub", bgColor: "#181717" }, 
+    { icon: SiPostman, text: "Postman", bgColor: "#FF6C37" } 
+  ]
+} as const;
 
 const Skills = () => {
   return (
@@ -54,18 +62,30 @@ const Skills = () => {
        <p className="text-slate-500 dark:text-slate-400 md:max-w-[24rem]">My stack & tools for building modern, robust web apps as a full-stack dev.
        </p>
      </div>
-     <div className="flex flex-wrap flex-shrink-0 w-full gap-3">
-       {
-        stacks.map((stack: IStacks) => {
-        const Icon = stack.icon;
-        return (
-          <Badge key={stack.text} className="flex items-center gap-2 py-2 px-3 rounded-lg bg-white border border-slate-300 dark:border-slate-700 text-slate-950 shadow-none font-medium">
-            <Icon size={18} color={stack.bgColor} />
-            <span>{stack.text}</span>
-          </Badge>
-        );
-      })} 
-     </div>
+     <div className="flex w-full md:max-w-[35rem] flex-col gap-y-8">
+     {
+       Object.entries(stacks).map(([category, stackItems]) => (
+       <div key={category} className="flex flex-col gap-y-3">
+         <h5 className="text-sm text-slate-500 dark:text-slate-400 font-mono uppercase">
+           {category}
+        </h5>
+        <div className="flex flex-wrap flex-shrink-0 w-full gap-3">
+          {stackItems.map((stack: IStacks) => {
+            const Icon = stack.icon;
+            return (
+            <Badge 
+              key={stack.text} 
+              className="flex items-center gap-2 py-2 px-3 rounded-lg bg-white border border-slate-300 dark:border-slate-700 text-slate-950 shadow-none font-medium"
+            >
+              <Icon size={18} color={stack.bgColor} />
+              <span>{stack.text}</span>
+            </Badge>
+            );
+          })}
+        </div>
+      </div>
+     ))}
+    </div>
   </section>
   )
 }
