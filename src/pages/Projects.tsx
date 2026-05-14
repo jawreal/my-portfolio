@@ -9,12 +9,14 @@ const Projects = () => {
        <p className="text-slate-500 dark:text-slate-400">Explore my featured projects showcasing innovative design and development solutions
        </p>
      </div>
-     <div className="grid grid-cols-1 md:grid-cols-2 md:space-x-4 space-y-4">
-       {
-         projectsData.map((project: IProjectsData, idx: number) => (
-         <ProjectContainer {...project} projectNumber={idx + 1} />
-         ))
-       }
+     <div className="flex justify-center">
+       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-4 gap-y-4 max-w-3xl">
+         {
+          projectsData.map((project: IProjectsData, idx: number) => (
+           <ProjectContainer {...project} projectNumber={idx + 1} />
+           ))
+         }
+       </div>
      </div>
   </section>
   )

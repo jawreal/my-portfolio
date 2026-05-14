@@ -17,7 +17,7 @@ const ProjectContainer = ({ projectNumber, title, imgSrc }: IProps) => {
   }, [projectNumber]);
   
   return (
-  <Card className="rounded-none p-0 border shadow-none">
+  <Card className="rounded-none p-0 border shadow-none min-w-xl ">
     <CardContent className="p-0 flex flex-col">
       <div className="h-44 w-full relative">
         <span className="h-10 w-10 font-extrabold bg-zinc-950/80 absolute top-3 left-3 border border-zinc-900 flex items-center text-sm justify-center text-slate-200">{formatNumber}</span>
