@@ -8,7 +8,7 @@ export default {
   			inter: [
   				'Inter',
   				'sans-serif'
-  			]
+  			], 
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

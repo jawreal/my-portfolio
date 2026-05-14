@@ -48,10 +48,10 @@ const stacks: IStacks[] = [
 
 const Skills = () => {
   return (
-  <section className="w-full px-6 flex flex-col md:px-20 pb-20 gap-y-4" id="skills">
+  <section className="w-full px-6 flex flex-col md:px-20 py-20 gap-y-6 border-y" id="skills">
      <div className="w-full flex flex-col gap-y-2">
        <h1 className="text-4xl font-extrabold dark:text-slate-200">SKILLS & TOOLS</h1>
-       <p className="text-slate-500 dark:text-slate-400">My stack & tools for building modern, robust web apps as a full-stack dev.
+       <p className="text-slate-500 dark:text-slate-400 md:max-w-[24rem]">My stack & tools for building modern, robust web apps as a full-stack dev.
        </p>
      </div>
      <div className="flex flex-wrap flex-shrink-0 w-full gap-3">
@@ -59,7 +59,7 @@ const Skills = () => {
         stacks.map((stack: IStacks) => {
         const Icon = stack.icon;
         return (
-          <Badge key={stack.text} className="flex items-center gap-2 py-2 px-3 rounded-sm rounded-lg bg-white border border-slate-300 dark:border-0 text-slate-950 shadow-none">
+          <Badge key={stack.text} className="flex items-center gap-2 py-2 px-3 rounded-lg bg-white border border-slate-300 dark:border-slate-700 text-slate-950 shadow-none font-medium">
             <Icon size={18} color={stack.bgColor} />
             <span>{stack.text}</span>
           </Badge>

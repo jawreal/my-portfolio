@@ -26,7 +26,7 @@ const About = () => {
        </div> 
        <div className="w-full pt-2 md:max-w-[25rem] mb-5">
          <h5 className="font-mono text-slate-500 dark:text-slate-400">ABOUT JORELL</h5> 
-          <h1 className="text-4xl md:text-5xl font-extrabold dark:text-slate-200 mt-2 mb-4">The Developer Behind the Code</h1>
+          <h1 className="text-4xl md:text-5xl font-extrabold dark:text-slate-200 mt-2 mb-4">THE DEVELOPER BEHIND THE CODE</h1>
           <div className="text-slate-500 dark:text-slate-400 flex flex-col gap-y-3">
            <p>
             I enjoy transforming ideas into practical and meaningful digital experiences. What started as curiosity about how websites work eventually became a passion for building applications that solve real problems and improve user experience.
