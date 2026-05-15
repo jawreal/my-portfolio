@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
 interface IProps {
-  position: string;
+  position?: string;
   children: ReactNode;
 }
 

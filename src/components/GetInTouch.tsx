@@ -15,11 +15,11 @@ const GetInTouch = () => {
          className="shadow-none border-x-0 border-t-0 border-b-2 rounded-none px-0 pb-3 focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-b-2" />
      </div>
      <div className="flex flex-col gap-y-3">
-       <Label htmlFor="emailAddress">MESSAGE</Label>
+       <Label htmlFor="emailAddress">EMAIL ADDRESS</Label>
        <Input id="emailAddress" placeholder="your email (e.g., john.doe@mail.com)" className="shadow-none border-x-0 border-t-0 border-b-2 rounded-none px-0 pb-3 focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-b-2" />
      </div>
      <div className="flex flex-col gap-y-3">
-       <Label htmlFor="message">EMAIL ADDRESS</Label>
+       <Label htmlFor="message">MESSAGE</Label>
        <Textarea id="message" placeholder="your message (e.g., We're excited to explore how you can contribute to our team. Let's connect. )" rows={4} className="shadow-none border-x-0 border-t-0 border-b-2 rounded-none px-0 pb-3 focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-b-2" />
      </div>
      <Button className="h-11 rounded-none mt-1">
@@ -33,11 +33,11 @@ const GetInTouch = () => {
      <div className="flex flex-col gap-y-3">
        <h5 className="font-extrabold dark:text-slate-200">SOCIAL PROFILES</h5>
        <div className="w-full flex justify-start gap-x-2">
-         <Button variant="outline" className="h-11 rounded-none mt-1 rounded-none border-2">
+         <Button variant="outline" className="h-11 rounded-none mt-1 rounded-none">
             <FaLinkedin />
             LinkedIn
          </Button>
-         <Button variant="outline" className="h-11 rounded-none mt-1 rounded-none border-2">
+         <Button variant="outline" className="h-11 rounded-none mt-1 rounded-none">
             <SiGithub />
             GitHub
          </Button>

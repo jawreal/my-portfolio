@@ -1,10 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
+  const { ref: heroRef, inView: heroInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
     <section className="w-full flex-1 px-6 flex flex-col md:px-20">
-      <div className="flex-1 border-x dark:border-slate-800 flex flex-col gap-y-4">
+      <motion.div 
+         initial={{ opacity: 0, y: 15 }}
+         animate={{ opacity: 1, y: 0 }}
+         transition={{ duration: 0.5, ease: "easeOut", delay: 0.6 }}
+        className="flex-1 border-x dark:border-slate-800 flex flex-col gap-y-4">
         <div className="flex flex-col pt-10 gap-y-3 max-w-[30rem] px-4 mt-1">
           <h1 className="text-5xl md:text-7xl font-extrabold dark:text-slate-200">BUILDING ROBUST WEB SOLUTIONS</h1>
           <p className="text-slate-500 dark:text-slate-400">Focused on developing scalable full-stack applications with attention to performance, usability, and clean code structure.</p>
@@ -18,7 +29,7 @@ const HeroSection = () => {
             DOWNLOAD CV
            </Button> 
          </div>
-      </div>
+      </motion.div>
     </section>
   )
 }
