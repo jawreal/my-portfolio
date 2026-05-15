@@ -9,8 +9,8 @@ const Projects = () => {
        <p className="text-slate-500 dark:text-slate-400 md:max-w-[25rem]">Explore my featured projects showcasing innovative design and development solutions
        </p>
      </div>
-     <div className="flex justify-center">
-       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-6 gap-y-6 max-w-3xl">
+     <div className="flex">
+       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-6 gap-y-6 max-w-5xl">
          {
           projectsData.map((project: IProjectsData, idx: number) => (
            <ProjectContainer {...project} projectNumber={idx + 1} />

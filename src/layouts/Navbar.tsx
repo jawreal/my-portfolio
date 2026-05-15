@@ -12,7 +12,8 @@ const Navbar = () => {
   }
   
   return (
-    <nav className="w-full px-6 h-24 md:px-20 border-b dark:border-slate-800 md:sticky md:top-0 z-20">
+  <div className="w-full flex flex-col items-center max-w-7xl relative md:sticky md:top-0 z-20">
+    <nav className="w-full px-6 h-24 md:px-20">
       {/* Container with border */}
       <section className="h-full border-x dark:border-slate-800 flex items-center px-4">
         <h1 className="text-4xl font-extrabold dark:text-slate-200">JR</h1>
@@ -27,6 +28,7 @@ const Navbar = () => {
         </Button>
       </section>
     </nav>
+  </div>
   )
 }
 
