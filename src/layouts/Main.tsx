@@ -5,6 +5,7 @@ import About from "@/pages/About";
 import Projects from "@/pages/Projects";
 import Skills from "@/pages/Skills";
 import Contact from "@/pages/Contact";
+import Footer from "@/pages/Footer";
 
 
 const Main = () => {
@@ -20,6 +21,7 @@ const Main = () => {
     <Projects />
     <Skills />
     <Contact />
+    <Footer />
   </div>
   )
 }

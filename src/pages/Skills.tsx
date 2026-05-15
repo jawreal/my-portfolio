@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { type IconType } from 'react-icons';
-import { FaCss3Alt } from 'react-icons/fa';
+import { FaCss3Alt, FaFigma } from 'react-icons/fa';
 import { GiBearFace, } from 'react-icons/gi';
 import { 
   SiHtml5,
@@ -50,7 +50,8 @@ const stacks: Record<string, IStacks[]> = {
   tools: [
     { icon: SiGit, text: "Git", color: "text-[#F05032]" },
     { icon: SiGithub, text: "GitHub", color: "text-[#000000] dark:text-slate-200" }, 
-    { icon: SiPostman, text: "Postman", color: "text-[#FF6C37]" } 
+    { icon: SiPostman, text: "Postman", color: "text-[#FF6C37]" }, 
+    { icon: FaFigma, text: "Figma", color: "text-[#000000] dark:text-slate-200" }, 
   ]
 } as const;
 
@@ -62,7 +63,7 @@ const Skills = () => {
        <p className="text-slate-500 dark:text-slate-400 md:max-w-[24rem]">My stack & tools for building modern, robust web apps as a full-stack dev.
        </p>
      </div>
-     <div className="flex w-full md:max-w-[35rem] flex-col gap-y-8">
+     <div className="flex w-full flex-col gap-y-8 md:max-w-xl">
      {
        Object.entries(stacks).map(([category, stackItems]) => (
        <div key={category} className="flex flex-col gap-y-3">
