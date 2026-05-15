@@ -1,14 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
-import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
-  const { ref: heroRef, inView: heroInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
   return (
     <section className="w-full flex-1 px-6 flex flex-col md:px-20">
       <motion.div 
