@@ -5,22 +5,17 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { FaLinkedin } from 'react-icons/fa';
 import { SiGithub } from 'react-icons/si';
-import { motion, type HTMLMotionProps } from "framer-motion";
+import { motion } from "framer-motion";
+import { animationProps } from "@/lib/animationProps";
 
 interface IProps {
   isInview: boolean;
 }
 
 const GetInTouch = ({ isInview }: IProps) => {
-  const animationProps = (delay: number): HTMLMotionProps<"div" | "h1"> => ({
-    initial: { opacity: 0, x: 20 },
-    animate: isInview ? { opacity: 1, x: 0 } : {},
-    transition: { duration: 0.6, ease: "easeOut", delay }
-  });
-
   return (
     <form className="w-full flex flex-col [&_label]:font-bold [&_label]:text-sm [&_label]:dark:text-slate-200 gap-y-6">
-      <motion.div {...animationProps(0.1)} className="flex flex-col gap-y-3">
+      <motion.div {...animationProps(0.1, isInview)} className="flex flex-col gap-y-3">
         <Label htmlFor="fullName">FULLNAME</Label>
         <Input 
           id="fullName" 
@@ -29,7 +24,7 @@ const GetInTouch = ({ isInview }: IProps) => {
         />
       </motion.div>
 
-      <motion.div {...animationProps(0.2)} className="flex flex-col gap-y-3">
+      <motion.div {...animationProps(0.2, isInview)} className="flex flex-col gap-y-3">
         <Label htmlFor="emailAddress">EMAIL ADDRESS</Label>
         <Input 
           id="emailAddress" 
@@ -38,7 +33,7 @@ const GetInTouch = ({ isInview }: IProps) => {
         />
       </motion.div>
 
-      <motion.div {...animationProps(0.3)} className="flex flex-col gap-y-3">
+      <motion.div {...animationProps(0.3, isInview)} className="flex flex-col gap-y-3">
         <Label htmlFor="message">MESSAGE</Label>
         <Textarea 
           id="message" 
@@ -48,19 +43,19 @@ const GetInTouch = ({ isInview }: IProps) => {
         />
       </motion.div>
 
-      <motion.div {...animationProps(0.4)} className="w-full">
+      <motion.div {...animationProps(0.4, isInview)} className="w-full">
         <Button className="h-11 rounded-none mt-1 w-full">
           SEND MESSAGE
           <ArrowRight />
         </Button>
       </motion.div>
 
-      <motion.div {...animationProps(0.5)} className="flex flex-col gap-y-3">
+      <motion.div {...animationProps(0.5, isInview)} className="flex flex-col gap-y-3">
         <h5 className="font-extrabold dark:text-slate-200">MY EMAIL</h5>
         <span className="text-slate-500 dark:text-slate-400">me@gmail.com</span>
       </motion.div>
 
-      <motion.div {...animationProps(0.6)} className="flex flex-col gap-y-3">
+      <motion.div {...animationProps(0.6, isInview)} className="flex flex-col gap-y-3">
         <h5 className="font-extrabold dark:text-slate-200">SOCIAL PROFILES</h5>
         <div className="w-full flex justify-start gap-x-2">
           <Button variant="outline" className="h-11 rounded-none mt-1">

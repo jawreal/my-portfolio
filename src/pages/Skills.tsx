@@ -22,6 +22,7 @@ import {
 } from 'react-icons/si';
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+import { animationProps } from "@/lib/animationProps";
 
 interface IStacks {
   icon: IconType;
@@ -66,10 +67,7 @@ const Skills = () => {
   return (
   <section className="w-full px-6 flex flex-col md:px-20 py-20 gap-y-6 border-y" id="skills">
      <motion.div 
-       initial={{ opacity: 0, x: 20 }}
-       animate={skillsInView  ? { opacity:
-          1, x: 0 } : {}}
-       transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+       {...animationProps(0.4, skillsInView)}
        className="w-full flex flex-col gap-y-2">
        <h1 className="text-4xl font-extrabold dark:text-slate-200">SKILLS & TOOLS</h1>
        <p className="text-slate-500 dark:text-slate-400 md:max-w-[24rem]">My stack & tools for building modern, robust web apps as a full-stack dev.
@@ -80,9 +78,7 @@ const Skills = () => {
        Object.entries(stacks).map(([category, stackItems], parentIndex: number) => (
        <div key={category} className="flex flex-col gap-y-3">
          <motion.h5 
-           initial={{ opacity: 0, x: 20 }}
-           animate={skillsInView  ? { opacity: 1, x: 0 } : {}}
-           transition={{ duration: 0.6, ease: "easeOut", delay: parentIndex * 0.3 }}
+           {...animationProps(parentIndex * 0.3, skillsInView)}
            className="text-sm text-slate-500 dark:text-slate-400 font-mono uppercase">
            {category}
         </motion.h5>
@@ -91,9 +87,7 @@ const Skills = () => {
             const Icon = stack.icon;
             return (
             <motion.div 
-              initial={{ opacity: 0, x: 20 }}
-              animate={skillsInView  ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.3, ease: "easeOut", delay: childIndex * 0.2 }}
+              {...animationProps(childIndex * 0.2, skillsInView)}
               key={childIndex}>
               <Badge 
                 className="flex items-center gap-2 py-2 px-3 rounded-none bg-transparent border border-slate-300 dark:border-slate-700 shadow-none font-medium dark:text-slate-200 text-slate-950">
