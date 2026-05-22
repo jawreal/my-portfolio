@@ -50,13 +50,13 @@ const GetInTouch = ({ isInview }: IProps) => {
         </Button>
       </motion.div>
 
-      <motion.div {...animationProps(0.5, isInview)} className="flex flex-col gap-y-3">
-        <h5 className="font-extrabold dark:text-slate-200">MY EMAIL</h5>
-        <span className="text-slate-500 dark:text-slate-400">me@gmail.com</span>
+      <motion.div {...animationProps(0.5, isInview)} className="flex flex-col gap-y-1">
+        <h5 className="font-extrabold dark:text-slate-200 text-sm">MY EMAIL</h5>
+        <span className="text-slate-500 dark:text-slate-400">jorellrelleve@gmail.com</span>
       </motion.div>
 
-      <motion.div {...animationProps(0.6, isInview)} className="flex flex-col gap-y-3">
-        <h5 className="font-extrabold dark:text-slate-200">SOCIAL PROFILES</h5>
+      <motion.div {...animationProps(0.6, isInview)} className="flex flex-col gap-y-2">
+        <h5 className="font-extrabold dark:text-slate-200 text-sm">SOCIAL PROFILES</h5>
         <div className="w-full flex justify-start gap-x-2">
           <Button variant="outline" className="h-11 rounded-none mt-1">
             <FaLinkedin />

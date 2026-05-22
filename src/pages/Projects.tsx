@@ -24,7 +24,9 @@ const Projects = () => {
          {
           projectsData.map((project: IProjectsData, idx: number) => (
            <motion.div 
-              {...animationProps(idx * 0.3, projectInView)} >
+              {...animationProps(idx * 0.3, projectInView)}
+              key={idx}
+              >
              <ProjectContainer {...project} projectNumber={idx + 1} />
            </motion.div>
            ))
