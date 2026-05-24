@@ -10,16 +10,15 @@ const useScrollNavigate = () => {
   const navigate = useNavigate();
 
   const handleNavigate = ({ id, onOpenChange }: IScrollNavigate) => {
-    navigate(`/${id}`);
+    navigate("/", {
+      state: {
+        scrollTo: id,
+      },
+    });
     
     if (onOpenChange) {
       onOpenChange(false);
     } 
-    
-    setTimeout(() => {
-      const element = document.querySelector(`${id}`);
-      if (element) element.scrollIntoView({ behavior: "smooth" });
-    }, 100);
   };
 
   return handleNavigate;

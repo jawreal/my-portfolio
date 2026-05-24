@@ -22,7 +22,7 @@ const NavLinks = ({ open, onOpenChange }: IProps) => {
        onOpenChange, 
      })
      
-   }, [onOpenChange]);
+   }, [onOpenChange, navigate]);
    
    return (
    <ul className={cn("flex flex-col gap-y-4 md:gap-y-0 md:flex-row md:ml-auto md:gap-x-3 md:items-end", !open && "hidden md:flex")}>

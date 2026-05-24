@@ -2,7 +2,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { type IProjectsData } from "@/lib/projectsData";
-import { useMemo, lazy, Suspense } from "react";
+import { useMemo, useCallback, lazy, Suspense } from "react";
+import { useNavigate } from "react-router-dom";
 const Image = lazy(() => import("@/components/Image"));
 
 
@@ -11,10 +12,13 @@ interface IProps extends IProjectsData {
 }
 
 const ProjectContainer = ({ projectNumber, title, imgSrc }: IProps) => {
+  const navigate = useNavigate();
   const formatNumber = useMemo(() => {
     // Add zero to a whole number (e.g., 01, 02, etc.)
     return projectNumber.toString().padStart(2, "0");
   }, [projectNumber]);
+  
+  const onNavigate = useCallback(() => navigate(`/preview/${projectNumber}`), [navigate, projectNumber])
   
   return (
   <Card className="rounded-none p-0 border shadow-none min-w-xl ">
@@ -28,7 +32,7 @@ const ProjectContainer = ({ projectNumber, title, imgSrc }: IProps) => {
       <div className="flex flex-col gap-y-3 p-6">
          <h5 className="text-xl font-bold dark:text-slate-200">{title}</h5>
          <div className="w-full flex flex-col gap-y-3 [&_button]:h-10">
-           <Button className="rounded-none">
+           <Button className="rounded-none" onClick={onNavigate}>
              View Project
            </Button>
            <Button variant="outline" className="rounded-none dark:bg-slate-900 shadow-none">
