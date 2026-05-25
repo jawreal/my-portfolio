@@ -18,7 +18,9 @@ const ProjectContainer = ({ projectNumber, title, imgSrc }: IProps) => {
     return projectNumber.toString().padStart(2, "0");
   }, [projectNumber]);
   
-  const onNavigate = useCallback(() => navigate(`/preview/${projectNumber}`), [navigate, projectNumber])
+  const onNavigate = useCallback(() => {
+     navigate(`/preview/${projectNumber}`)
+  }, [navigate, projectNumber]);
   
   return (
   <Card className="rounded-none p-0 border shadow-none min-w-xl ">

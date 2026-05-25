@@ -1,23 +1,23 @@
 import { Badge } from "@/components/ui/badge";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { projectsData } from "@/lib/projectsData";
-import { combinedStacks } from "@/lib/techStacks";
+import { projectsData, type IProjectsData } from "@/lib/projectsData";
+import { combinedStacks, type IStacks } from "@/lib/techStacks";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { animationProps } from "@/lib/animationProps";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
-
-const stacks = ["React", "Tailwind CSS", "TypeScript", "Node.js", "Express.js", "MongoDB", "TansTack", "Zustand", "Cloudflare"]
+import { useLocation } from "react-router-dom";
 
 interface IParams {
-  id?: string | undefined;
+  [key: string]: string | undefined;
 }
 
 const PreviewProject = () => {
-  const [projectStacks, setProjectStacks] = useState([]);
-  const [project, setProject] = useState([]);
+  const { pathname } = useLocation();
+  const [projectStacks, setProjectStacks] = useState<IStacks[]>([]);
+  const [project, setProject] = useState<IProjectsData | null>(null);
   const { id } = useParams<IParams>();
   const { ref: previewRef, inView: previewInView } = useInView({
     triggerOnce: true,
@@ -32,17 +32,24 @@ const PreviewProject = () => {
         return;
       };
       const filteredProject = projectsData.find(item => item.id === parsedId);
-      setProject(filteredProject);
-      console.log("Filtered projects:", filteredProject)
-      
-      const filteredStacks = combinedStacks.filter(stack => filteredProject.stacks.includes(stack.id));
-      setProjectStacks(filteredStacks)
-      console.log("Filtered stacks:", filteredStacks)
+      if(filteredProject){
+        setProject(filteredProject);
+        console.log("Filtered projects:", filteredProject) 
+        
+       const filteredStacks = combinedStacks.filter(stack => filteredProject?.stacks?.includes(stack.id));
+       setProjectStacks(filteredStacks)
+       console.log("Filtered stacks:", filteredStacks) 
+      }
+    
     }
-  }, [id])
+  }, [id]);
+  
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
   
   return (
-  <div className="w-full flex flex-col py-16 px-6 md:px-20 gap-y-6 min-h-screen">
+  <div id="preview" className="w-full flex flex-col py-16 px-6 md:px-20 gap-y-6">
   
     {/* Project title and description */}
     <motion.div 
@@ -75,7 +82,7 @@ const PreviewProject = () => {
          <span className="font-extrabold dark:text-slate-200 text-sm">FEATURES</span> 
        </motion.div>
        <ul className="w-full flex flex-col gap-y-2 max-w-2xl">
-       {project?.features?.map((feature, idx) => (
+       {project?.features?.map((feature: string, idx: number) => (
        <li key={idx}>
          <motion.div 
            {...animationProps(idx * 0.2, false, true)}
@@ -90,7 +97,7 @@ const PreviewProject = () => {
     
     {/* Project image */}
     <motion.div 
-      {...animationProps(0.5, previewRef, true)}
+      {...animationProps(0.5, previewInView, true)}
       className="w-full h-44 md:h-auto border">
        <img src={`${project?.imgSrc}`} className="w-full h-full object-cover" />
      </motion.div>
@@ -118,7 +125,7 @@ const PreviewProject = () => {
      
     {/* Live preview button  */}
     <div className="w-full flex flex-col md:flex-row gap-y-3 m:gap-x-3">
-      <Button className="rounded-none shadow-none flex-1 md:flex-none h-11">
+      <Button className="rounded-none shadow-none w-full md:w-auto h-10 ml-auto">
           Live Preview
           <ArrowUpRight className="ml-2"/>
        </Button>            

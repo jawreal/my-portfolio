@@ -4,7 +4,6 @@ import { Fragment } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { animationProps } from "@/lib/animationProps";
-import { GraduationCap, School, MapPin } from "lucide-react";
 
 const About = () => {
   const { ref: imageRef, inView: imageInView } = useInView({
