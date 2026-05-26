@@ -2,9 +2,13 @@ import { Button } from "@/components/ui/button";
 import MobileMenu from "@/components/MobileMenu";
 import NavLinks from "@/layouts/NavLinks";
 import { Menu } from "lucide-react";
-import { useState } from "react";
+import { useState, useMemo } from "react";
+import { useLocation } from "react-router-dom";
+import { cn } from "@/lib/utils";
 
 const Navbar = () => {
+  const location = useLocation();
+  const notInPreviewPage = useMemo(() => !location.pathname.includes("preview"), [location])
   const [openMobileMenu, setOpenMobileMenu] = useState<boolean>(false);
   
   const onOpenMenu = () => {
@@ -12,10 +16,10 @@ const Navbar = () => {
   }
   
   return (
-  <div className="w-full flex flex-col items-center max-w-7xl relative md:sticky md:top-0 z-20">
+  <div className="w-full flex flex-col items-center max-w-7xl relative sticky top-0 z-20">
     <nav className="w-full px-6 h-24 md:px-20">
       {/* Container with border */}
-      <section className="h-full border-x dark:border-slate-800 flex items-center px-4">
+      <section className={cn("h-full dark:border-slate-900 flex items-center", notInPreviewPage && "")} >
         <h1 className="text-4xl font-extrabold dark:text-slate-200">JR</h1>
         <NavLinks />
         <MobileMenu

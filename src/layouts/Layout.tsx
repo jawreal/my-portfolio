@@ -1,5 +1,4 @@
 import Navbar from "@/layouts/Navbar";
-import BacklashBg from "@/components/BacklashBg"; 
 import { Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Footer from "@/pages/Footer";
@@ -24,7 +23,6 @@ const Layout = () => {
   return (
   <div className="w-full flex flex-col items-center">
     <Navbar />    
-    <BacklashBg height="after:h-7"/>
     <Outlet />
     <Footer />
   </div>

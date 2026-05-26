@@ -49,7 +49,7 @@ const PreviewProject = () => {
   }, [pathname])
   
   return (
-  <div id="preview" className="w-full flex flex-col py-16 px-6 md:px-20 gap-y-6">
+  <div id="preview" className="w-full flex flex-col py-10 px-6 md:px-20 gap-y-6 border-t dark:border-slate-900">
   
     {/* Project title and description */}
     <motion.div 

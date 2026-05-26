@@ -65,7 +65,7 @@ const projectsData: IProjectsData[] = [
     imgSrc: "/pnp_landing.jpg", 
     stacks: projectStacks.pnpFirearm,
     description: "A web-based firearm records management system developed for the Logistics Department of the Philippine National Police — City of San Jose del Monte, Bulacan. The system provides secure registration, tracking, and auditing of both long and short firearms assigned within the unit.", 
-    type: "Internship Project - Web-Based System for PNP Logistics Department", 
+    type: "Internship Project", 
     date: "January - March 2026", 
     features: [
       "Minimalist and modern user interface design.",
