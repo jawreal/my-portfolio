@@ -36,7 +36,7 @@ const Skills = () => {
               {...animationProps(childIndex * 0.2, skillsInView)}
               key={childIndex}>
               <Badge 
-                className="flex items-center gap-2 py-2 px-3 rounded-none bg-transparent border border-slate-300 dark:border-slate-700 shadow-none font-medium dark:text-slate-200 text-slate-950">
+                className="flex items-center gap-2 py-2 px-3 rounded-none bg-transparent border border-slate-300 dark:border-slate-800 shadow-none font-medium dark:text-slate-200 text-slate-950">
                  <Icon size={18} className={stack.color} />
                 <span>{stack.text}</span>
               </Badge>

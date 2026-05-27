@@ -3,7 +3,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { FaLinkedin, FaFacebook, type IconType } from 'react-icons/fa';
+import { FaLinkedin, FaFacebook } from 'react-icons/fa';
+import { type IconType } from 'react-icons'; 
 import { SiGithub } from 'react-icons/si';
 import { motion } from "framer-motion";
 import { animationProps } from "@/lib/animationProps";
@@ -31,7 +32,7 @@ const socialProfiles: ISocialProfile[] = [
   }, 
   {
     link: "https://github.com/jawreal", 
-    icon: FaLinkedin,  
+    icon: SiGithub,  
     text: "GitHub"
   }, 
 ]
@@ -85,7 +86,10 @@ const GetInTouch = ({ isInview }: IProps) => {
           {socialProfiles.map((profile: ISocialProfile, idx: number) =>  {
             const Icon: IconType = profile.icon;
             return (
-            <a href={profile.link} className="h-11 px-3 rounded-none border border-slate-300 dark:border-slate-800 flex gap-x-2 items-center disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 text-sm font-medium hover:cursor-pointer active:scale-95" target="_blank" rel="noopener noreferrer">
+            <a
+              key={idx} 
+              href={profile.link}
+              className="h-11 px-3 rounded-none border border-slate-300 dark:border-slate-800 flex gap-x-2 items-center disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 text-sm font-medium hover:cursor-pointer active:scale-95" target="_blank" rel="noopener noreferrer">
             <Icon />
             {profile.text}
           </a>)})}
