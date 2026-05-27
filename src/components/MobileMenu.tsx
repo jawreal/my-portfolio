@@ -5,7 +5,8 @@ import {
   DrawerHeader,
   DrawerTitle,
 } from "@/components/ui/drawer"
-import NavLinks from "@/layouts/NavLinks"
+import NavLinks from "@/layouts/NavLinks";
+import Initials from "@/components/Initials";
 import { Button } from "@/components/ui/button"
 import { X } from "lucide-react";
 import * as React from "react";
@@ -27,7 +28,9 @@ const MobileMenu = (props: IProps) => {
        <DrawerDescription />
      </DrawerHeader>
      <div className="w-full flex items-center p-4">
-       <h1 className="text-4xl ml-2 font-extrabold dark:text-slate-200">JR</h1> 
+       <div className="ml-2">
+         <Initials isVisible={true} />
+       </div> 
        <Button variant="ghost" className="ml-auto" onClick={onCloseDrawer}>
          <X />
        </Button>

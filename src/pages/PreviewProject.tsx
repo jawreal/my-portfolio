@@ -54,12 +54,12 @@ const PreviewProject = () => {
   return (
   <div id="preview" className="w-full flex flex-col py-10 px-6 md:px-20 gap-y-6 border-t dark:border-slate-900 relative">
     {/* Project ID number */}
-    {project?.id && <h1 className="absolute top-12 md:top-14 right-2 md:right-20 text-9xl font-ultra text-slate-200/80 dark:text-slate-900/75 z-[-1]">{"0" + project.id}</h1>}
+    {project?.id && <h1 className="absolute top-12 md:top-14 right-2 md:right-20 text-9xl font-ultra text-slate-200/80 dark:text-slate-900/75 z-1">{"0" + project.id}</h1>}
   
     {/* Project title and description */}
     <motion.div 
       {...animationProps(0.1, false, true)}
-      className="flex flex-col gap-y-4">
+      className="flex flex-col gap-y-4 relative z-10">
       <h1 className="text-3xl md:text-5xl font-ultra dark:text-slate-200 leading-none">{(project?.title ?? "No title found")?.toUpperCase()}</h1>
       <p className="text-slate-500 dark:text-slate-400 max-w-2xl">{project?.description ?? "No description found"}</p>
     </motion.div>

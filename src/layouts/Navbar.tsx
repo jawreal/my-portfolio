@@ -1,12 +1,17 @@
 import { Button } from "@/components/ui/button";
 import MobileMenu from "@/components/MobileMenu";
+import Initials from "@/components/Initials"
 import NavLinks from "@/layouts/NavLinks";
 import { Menu } from "lucide-react";
 import { useState, useMemo } from "react";
 import { useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
-const Navbar = () => {
+interface IProps {
+  navInview: boolean;
+}
+
+const Navbar = ({ navInview }: IProps) => {
   const location = useLocation();
   const notInPreviewPage = useMemo(() => !location.pathname.includes("preview"), [location])
   const [openMobileMenu, setOpenMobileMenu] = useState<boolean>(false);
@@ -20,7 +25,7 @@ const Navbar = () => {
     <nav className="w-full px-6 h-24 md:px-20">
       {/* Container with border */}
       <section className={cn("h-full dark:border-slate-900 flex items-center", notInPreviewPage && "")} >
-        <h1 className="text-4xl font-extrabold dark:text-slate-200">JR</h1>
+        <Initials isVisible={navInview} />
         <NavLinks />
         <MobileMenu
          open={openMobileMenu} 
