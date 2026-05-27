@@ -6,7 +6,6 @@ import { combinedStacks, type IStacks } from "@/lib/techStacks";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { animationProps } from "@/lib/animationProps";
-import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 import { useLocation } from "react-router-dom";
 
@@ -53,7 +52,9 @@ const PreviewProject = () => {
   }, [pathname])
   
   return (
-  <div id="preview" className="w-full flex flex-col py-10 px-6 md:px-20 gap-y-6 border-t dark:border-slate-900">
+  <div id="preview" className="w-full flex flex-col py-10 px-6 md:px-20 gap-y-6 border-t dark:border-slate-900 relative">
+    {/* Project ID number */}
+    {project?.id && <h1 className="absolute top-12 md:top-14 right-2 md:right-20 text-9xl font-ultra text-slate-200/80 dark:text-slate-900/75 z-[-1]">{"0" + project.id}</h1>}
   
     {/* Project title and description */}
     <motion.div 
@@ -129,10 +130,10 @@ const PreviewProject = () => {
      
     {/* Live preview button  */}
     <div className="w-full flex flex-col md:flex-row gap-y-3 m:gap-x-3">
-      <Button className="rounded-none shadow-none w-full md:w-auto h-10 ml-auto">
+      <a href={project?.link ?? "#"} target="_blank" rel="noopener noreferrer" className="rounded-none shadow-none w-full md:w-auto h-10 ml-auto bg-zinc-950 dark:bg-slate-50 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium text-slate-50 dark:text-slate-950 active:scale-95">
           Live Preview
           <ArrowUpRight className="ml-2"/>
-       </Button>            
+       </a>            
     </div>
   </div>
   );

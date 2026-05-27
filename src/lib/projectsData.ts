@@ -7,6 +7,7 @@ interface IProjectsData {
   date: string;
   stacks: string[];
   features: string[];
+  link: string;
 }
 
 const projectStacks: Record<string, string[]> = {
@@ -73,7 +74,8 @@ const projectsData: IProjectsData[] = [
       "Complete registration system for both long and short firearms with detailed record storage in the database.",
       "Unique QR code generation for each registered firearm with system-restricted scanning to prevent unauthorized external access.",
       "Comprehensive audit logging system that automatically tracks and records every action for full accountability and review."
-    ]
+    ], 
+    link: "https://pnp-firearm-tracker.onrender.com/auth/login"
   }, 
   {
     id: 2,
@@ -90,7 +92,8 @@ const projectsData: IProjectsData[] = [
       "Secure role-based access control (RBAC) supporting three distinct user roles.",
       "Seamless infinite scrolling experience inspired by modern social platforms.",
       "Comprehensive admin dashboard featuring analytics, user insights, and platform statistics."
-    ]
+    ], 
+    link: "https://cdsga-thesis-vault.me/auth/landing-page"
   }, 
   {
     id: 3, 
@@ -109,7 +112,8 @@ const projectsData: IProjectsData[] = [
       "Item borrowing system with date tracking and management.",
       "Real-time data statistics displayed on the admin dashboard.",
       "Two-person collaborative project."
-    ]
+    ], 
+    link: "https://barangay-management-system-gohj.onrender.com/login"
   }, 
   {
     id: 4, 
@@ -118,7 +122,7 @@ const projectsData: IProjectsData[] = [
     stacks: projectStacks.quizGen,
     description: "An AI-powered platform that enables users to create interactive quizzes based on custom prompts. The system generates dynamic quiz content tailored to user specifications.", 
     type: "Personal Project", 
-    date: "November 2025 - January 2026", 
+    date: "November 2025 - January 2026",
     features: [
       "Minimalist and modern user interface focused on usability and accessibility.",
       "Mobile-first responsive design optimized for desktop, tablet, and mobile devices.",
@@ -127,7 +131,8 @@ const projectsData: IProjectsData[] = [
       "Daily rate limiting of 3 quizzes per user account to manage system resources.",
       "Quiz history tracking for all user-created quizzes.",
       "Automatic scoring with detailed evaluation of correct and incorrect answers."
-    ]
+    ], 
+    link: "https://neuro-quiz.onrender.com/auth"
   }
 ]
 
