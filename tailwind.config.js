@@ -10,6 +10,9 @@ export default {
   				'sans-serif'
   			], 
   		},
+  		fontWeight: {
+        ultra: '1000',
+      },
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',

@@ -31,14 +31,18 @@ const PreviewProject = () => {
         console.log("Invalid ID")
         return;
       };
+      
+      /* Filter project based on ID */
       const filteredProject = projectsData.find(item => item.id === parsedId);
       if(filteredProject){
+        /* Set project if it exists */ 
         setProject(filteredProject);
         console.log("Filtered projects:", filteredProject) 
         
        const filteredStacks = combinedStacks.filter(stack => filteredProject?.stacks?.includes(stack.id));
+       /* Set project stacks if it doesn't exist */
        setProjectStacks(filteredStacks)
-       console.log("Filtered stacks:", filteredStacks) 
+       console.log("Filtered stacks:", filteredStacks)
       }
     
     }
@@ -55,7 +59,7 @@ const PreviewProject = () => {
     <motion.div 
       {...animationProps(0.1, false, true)}
       className="flex flex-col gap-y-4">
-      <h1 className="text-3xl md:text-5xl font-extrabold dark:text-slate-200 leading-none">{(project?.title ?? "No title found")?.toUpperCase()}</h1>
+      <h1 className="text-3xl md:text-5xl font-ultra dark:text-slate-200 leading-none">{(project?.title ?? "No title found")?.toUpperCase()}</h1>
       <p className="text-slate-500 dark:text-slate-400 max-w-2xl">{project?.description ?? "No description found"}</p>
     </motion.div>
     
