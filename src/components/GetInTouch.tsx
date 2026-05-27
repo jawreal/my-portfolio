@@ -3,7 +3,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { FaLinkedin } from 'react-icons/fa';
+import { FaLinkedin, FaFacebook, type IconType } from 'react-icons/fa';
 import { SiGithub } from 'react-icons/si';
 import { motion } from "framer-motion";
 import { animationProps } from "@/lib/animationProps";
@@ -11,6 +11,30 @@ import { animationProps } from "@/lib/animationProps";
 interface IProps {
   isInview: boolean;
 }
+
+interface ISocialProfile {
+  link: string;
+  icon: IconType;
+  text: string;
+}
+
+const socialProfiles: ISocialProfile[] = [
+  {
+    link: "https://www.facebook.com/share/1EL17RDNWU/", 
+    icon: FaFacebook, 
+    text: "Facebook"
+  }, 
+  {
+    link: "https://www.linkedin.com/in/jorell-relleve-63a7793a5/?lipi=urn%3Ali%3Apage%3Ap_mwlite_my_network%3Ba%2FvmrQZ8QWWL3zA2PC6ruw%3D%3D", 
+    icon: FaLinkedin, 
+    text: "LinkedIn"
+  }, 
+  {
+    link: "https://github.com/jawreal", 
+    icon: FaLinkedin,  
+    text: "GitHub"
+  }, 
+]
 
 const GetInTouch = ({ isInview }: IProps) => {
   return (
@@ -57,15 +81,14 @@ const GetInTouch = ({ isInview }: IProps) => {
 
       <motion.div {...animationProps(0.6, isInview)} className="flex flex-col gap-y-2">
         <h5 className="font-extrabold dark:text-slate-200 text-sm">SOCIAL PROFILES</h5>
-        <div className="w-full flex justify-start gap-x-2">
-          <Button variant="outline" className="h-11 rounded-none mt-1">
-            <FaLinkedin />
-            LinkedIn
-          </Button>
-          <Button variant="outline" className="h-11 rounded-none mt-1">
-            <SiGithub />
-            GitHub
-          </Button>
+        <div className="w-full flex justify-start gap-x-2 gap-y-2 pt-1 flex-wrap">
+          {socialProfiles.map((profile: ISocialProfile, idx: number) =>  {
+            const Icon: IconType = profile.icon;
+            return (
+            <a href={profile.link} className="h-11 px-3 rounded-none border border-slate-300 dark:border-slate-800 flex gap-x-2 items-center disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 text-sm font-medium hover:cursor-pointer active:scale-95" target="_blank" rel="noopener noreferrer">
+            <Icon />
+            {profile.text}
+          </a>)})}
         </div>
       </motion.div>
     </form>
