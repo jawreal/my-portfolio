@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { animationProps } from "@/lib/animationProps";
 import { ArrowUpRight } from "lucide-react";
 import { useLocation } from "react-router-dom";
+import NotFound from "@/pages/NotFound";
 
 interface IParams {
   [key: string]: string | undefined;
@@ -15,6 +16,7 @@ interface IParams {
 
 const PreviewProject = () => {
   const { pathname } = useLocation();
+  const [isInvalid, setIsInvalid] = useState<boolean>(false);
   const [projectStacks, setProjectStacks] = useState<IStacks[]>([]);
   const [project, setProject] = useState<IProjectsData | null>(null);
   const { id } = useParams<IParams>();
@@ -27,29 +29,33 @@ const PreviewProject = () => {
     if(id){
       const parsedId = Number(id)
       if(isNaN(parsedId)){
-        console.log("Invalid ID")
+        setIsInvalid(true)
         return;
       };
       
       /* Filter project based on ID */
       const filteredProject = projectsData.find(item => item.id === parsedId);
-      if(filteredProject){
-        /* Set project if it exists */ 
-        setProject(filteredProject);
-        console.log("Filtered projects:", filteredProject) 
-        
-       const filteredStacks = combinedStacks.filter(stack => filteredProject?.stacks?.includes(stack.id));
-       /* Set project stacks if it doesn't exist */
-       setProjectStacks(filteredStacks)
-       console.log("Filtered stacks:", filteredStacks)
+      if(!filteredProject){
+        setIsInvalid(true)
+        return;
       }
-    
+      
+       /* Set project if it exists */ 
+      setProject(filteredProject);
+      
+      const filteredStacks = combinedStacks.filter(stack => filteredProject?.stacks?.includes(stack.id));
+      /* Set project stacks if it doesn't exist */
+      setProjectStacks(filteredStacks)
     }
   }, [id]);
   
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [pathname])
+  }, [pathname]);
+  
+  if(isInvalid){
+    return <NotFound />;
+  }
   
   return (
   <div id="preview" className="w-full flex flex-col py-10 px-6 md:px-20 gap-y-6 border-t dark:border-slate-900 relative">
