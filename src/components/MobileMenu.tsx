@@ -35,7 +35,7 @@ const MobileMenu = (props: IProps) => {
          <X />
        </Button>
      </div>
-     <div className="px-2 pt-4">
+     <div className="px-2 pt-5">
        <NavLinks {...props} />
      </div>
      </DrawerContent>

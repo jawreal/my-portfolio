@@ -14,18 +14,19 @@ const About = () => {
   return (
   <section className="w-full flex-1 px-6 flex flex-col md:px-20 border-y dark:border-slate-900 py-10" id="about" >
      <div className="flex-1 dark:border-slate-900 flex flex-col md:flex-row gap-y-4 md:gap-x-4">
+       {/* Profile image */}
        <motion.div
          {...animationProps(0.8, imageInView)}
          className="h-full md:self-center order-2 md:ml-auto">
-         <div className="rounded-md relative w-[calc(100%-2rem)] mx-auto md:w-72 md:h-72">
-           <img src="./me2.jpg" className="w-full h-72 object-cover rounded-md border-2 border-slate-500 dark:border-slate-700" />
+         <div className="rounded-md relative w-[calc(100%-2rem)] mx-auto md:w-72 md:h-72 z-10">
+           <img src="./me2.jpg" className="w-full h-72 object-cover border border-slate-500 dark:border-slate-700" />
            <ImageBadge position="top-1 left-0 transform -translate-x-4 -translate-y-4">
               <Fragment>
                 <span className="h-1 w-1 rounded-full bg-purple-500"></span>
                 <span>FULL-STACK</span>
               </Fragment>
             </ImageBadge>
-            <ImageBadge position="bottom-1 right-0 transform translate-x-3 translate-y-4">
+            <ImageBadge position="bottom-1 right-0 transform translate-x-3 translate-y-3">
               <Fragment>
                 <span className="h-1 w-1 rounded-full bg-purple-500"></span>
                 <span>AVAILABLE</span>
@@ -33,6 +34,8 @@ const About = () => {
             </ImageBadge>
           </div>
        </motion.div> 
+       
+       {/* About description */}
        <div ref={imageRef} className="w-full pt-2 md:max-w-[25rem] mb-5">
           <motion.h5
            {...animationProps(0.6, imageInView)}
