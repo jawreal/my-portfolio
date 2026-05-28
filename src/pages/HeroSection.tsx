@@ -21,7 +21,7 @@ const HeroSection = () => {
         <div className="flex flex-col pt-16 md:pt-10 gap-y-3 max-w-[30rem] mt-3">
           <div className="text-5xl md:text-7xl font-ultra leading-10 relative" >
              <p className="dark:text-slate-200 relative z-10">BUILDING ROBUST WEB SOLUTIONS</p>
-             <p className="text-slate-200/90 dark:text-slate-800/80 transform translate-x-3 absolute top-0 z-1 translate-y-3" >BUILDING ROBUST WEB SOLUTIONS</p>
+             <p className="text-slate-200/90 dark:text-slate-800/75 transform translate-x-3 absolute top-0 z-1 translate-y-3" >BUILDING ROBUST WEB SOLUTIONS</p>
           </div>
           <p className="text-slate-500 dark:text-slate-400">Focused on developing scalable full-stack applications with attention to performance, usability, and clean code structure.</p>
          </div>
