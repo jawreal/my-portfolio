@@ -37,7 +37,7 @@ const ProjectContainer = ({ projectNumber, title, imgSrc, link }: IProps) => {
            <Button className="rounded-none" onClick={onNavigate}>
              View Project
            </Button>
-           <a href={link ?? "#"} target="_blank" rel="noopener noreferrer" className="rounded-none shadow-none w-full md:w-auto h-10 ml-auto disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm border border-slate-300 dark:border-slate-800 dark:bg-slate-900 font-medium active:scale-95">
+           <a href={link ?? "#"} target="_blank" rel="noopener noreferrer" className="rounded-none shadow-none w-full h-10 ml-auto disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm border border-slate-300 dark:border-slate-800 dark:bg-slate-900 font-medium active:scale-95">
               Live Preview
            </a> 
           </div>
