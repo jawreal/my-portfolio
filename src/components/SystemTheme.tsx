@@ -20,6 +20,7 @@ const SystemTheme = () => {
   const [activeTheme, setActiveTheme] = useState<Preset>(activePreset);
   
   const changeTheme = (preset: Preset) => {
+    const favicon = document.querySelector("link[rel='icon']") as HTMLLinkElement | null;
     const html = document.documentElement;
     if (preset === "dark") {
       html.classList.add("dark");
@@ -34,6 +35,15 @@ const SystemTheme = () => {
         html.classList.add("dark");
       } else {
         html.classList.remove("dark");
+      }
+    }
+    
+    // For toggling icon based on theme
+    if(favicon){
+      if(html.classList.contains("dark")){
+        favicon.href = "/jr_dark.png"
+      }else{
+        favicon.href = "/jr_light.png"
       }
     }
     
