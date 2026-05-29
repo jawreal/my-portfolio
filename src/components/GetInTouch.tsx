@@ -2,13 +2,13 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Loader } from "lucide-react";
 import { type IconType } from "react-icons";
 import { motion } from "framer-motion";
 import { animationProps } from "@/lib/animationProps";
 import { socialProfiles, type ISocialProfile } from "@/lib/socialProfiles";
 import { useForm, type SubmitHandler } from "react-hook-form";
-import { useCallback } from "react";
+import { useCallback, Fragment } from "react";
 import { CustomToast } from "@/components/CustomToast";
 
 interface IProps {
@@ -34,8 +34,37 @@ const GetInTouch = ({ isInview }: IProps) => {
   });
   
   const onSubmit: SubmitHandler<MessageInfo> = useCallback(async (data) => {
-    console.log("Data: ", data) 
-  }, []);
+    try {
+      console.log("Data", data)
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        body: JSON.stringify(data)
+      });
+      
+      if (!response.ok) {
+        throw new Error("Failed to send email")
+      }
+      
+      const result = await response.json()
+      
+      if (!result?.success) {
+        throw new Error("Failed server status response")
+      }
+      
+      CustomToast({
+        description: "Message sent! wait for email reply",
+        status: "success"
+      });
+      reset();
+      
+    } catch (error) {
+      console.log("Error: ", error)
+      CustomToast({
+        description: "Interval server error",
+        status: "error"
+      })
+    }
+  }, [reset]);
   
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="w-full flex flex-col [&_label]:font-bold [&_label]:text-sm [&_label]:dark:text-slate-200 gap-y-6">
@@ -101,9 +130,16 @@ const GetInTouch = ({ isInview }: IProps) => {
         <Button
           disabled={isSubmitting}
           type="submit" 
-          className="h-11 rounded-none mt-1 w-full">
-          SEND MESSAGE
-          <ArrowRight />
+          className="h-11 rounded-none mt-1 w-full uppercase">
+          {isSubmitting ? 
+          <Fragment>
+            <span>please wait...</span>
+            <Loader className="animate-spin" />
+          </Fragment> : 
+          <Fragment>
+            <span>send message</span>
+            <ArrowRight />
+          </Fragment>}
         </Button>
       </motion.div>
 
