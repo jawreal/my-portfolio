@@ -63,7 +63,7 @@ const projectsData: IProjectsData[] = [
   {
     id: 1, 
     title: "CSJDM-PNP Logistic Dept - Firearm Tracker",
-    imgSrc: "/pnp_landing.jpg", 
+    imgSrc: "/pnp_landing.png", 
     stacks: projectStacks.pnpFirearm,
     description: "A web-based firearm records management system developed for the Logistics Department of the Philippine National Police — City of San Jose del Monte, Bulacan. The system provides secure registration, tracking, and auditing of both long and short firearms assigned within the unit.", 
     type: "Internship Project", 
