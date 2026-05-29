@@ -7,44 +7,101 @@ import { type IconType } from "react-icons";
 import { motion } from "framer-motion";
 import { animationProps } from "@/lib/animationProps";
 import { socialProfiles, type ISocialProfile } from "@/lib/socialProfiles";
+import { useForm, type SubmitHandler } from "react-hook-form";
+import { useCallback } from "react";
+import { CustomToast } from "@/components/CustomToast";
 
 interface IProps {
   isInview: boolean;
 }
 
+interface MessageInfo {
+  fullName: string;
+  emailAddress: string;
+  message: string;
+}
+const NAME_REGEX: RegExp = /^[A-Za-z]+(?: [A-Za-z]+)?$/;
+const EMAIL_REGEX: RegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 const GetInTouch = ({ isInview }: IProps) => {
+  const { 
+    register,
+    reset,
+    handleSubmit,
+    formState: { isSubmitting, errors },
+  } = useForm<MessageInfo>({
+    mode: "onChange"
+  });
+  
+  const onSubmit: SubmitHandler<MessageInfo> = useCallback(async (data) => {
+    console.log("Data: ", data) 
+  }, []);
+  
   return (
-    <form className="w-full flex flex-col [&_label]:font-bold [&_label]:text-sm [&_label]:dark:text-slate-200 gap-y-6">
-      <motion.div {...animationProps(0.1, isInview)} className="flex flex-col gap-y-3">
+    <form onSubmit={handleSubmit(onSubmit)} className="w-full flex flex-col [&_label]:font-bold [&_label]:text-sm [&_label]:dark:text-slate-200 gap-y-6">
+      <motion.div {...animationProps(0.1, isInview)} className="flex flex-col">
         <Label htmlFor="fullName">FULLNAME</Label>
         <Input 
           id="fullName" 
+          {...register("fullName", {
+             required: "Fullname is required",
+             pattern: {
+               value: NAME_REGEX,
+               message:
+               "Please enter a valid fullname",
+              },
+              minLength: {
+                value: 8,
+                message: "Fullname must be at least 8 characters"
+              },
+          })}
           placeholder="your name (e.g., John Doe)" 
-          className="shadow-none border-x-0 border-t-0 border-b-2 rounded-none px-0 pb-3 focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-b-2" 
+          className="mt-3 shadow-none border-x-0 border-t-0 border-b-2 rounded-none px-0 pb-3 focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-b-2" 
         />
+        {errors.fullName && <span className="text-xs text-red-500 mt-2 uppercase font-medium">{errors.fullName.message}</span>}
       </motion.div>
 
-      <motion.div {...animationProps(0.2, isInview)} className="flex flex-col gap-y-3">
+      <motion.div {...animationProps(0.2, isInview)} className="flex flex-col">
         <Label htmlFor="emailAddress">EMAIL ADDRESS</Label>
         <Input 
           id="emailAddress" 
+          {...register("emailAddress", {
+             required: "Email address is required",
+             pattern: {
+               value: EMAIL_REGEX,
+               message:
+               "Please enter a valid email address",
+              },
+          })}
           placeholder="your email (e.g., john.doe@mail.com)" 
-          className="shadow-none border-x-0 border-t-0 border-b-2 rounded-none px-0 pb-3 focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-b-2" 
+          className="mt-3 shadow-none border-x-0 border-t-0 border-b-2 rounded-none px-0 pb-3 focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-b-2" 
         />
+        {errors.emailAddress && <span className="text-xs text-red-500 mt-2 uppercase font-medium">{errors.emailAddress.message}</span>}
       </motion.div>
 
-      <motion.div {...animationProps(0.3, isInview)} className="flex flex-col gap-y-3">
+      <motion.div {...animationProps(0.3, isInview)} className="flex flex-col">
         <Label htmlFor="message">MESSAGE</Label>
         <Textarea 
           id="message" 
+          {...register("message", {
+             required: "Message is required",
+              minLength: {
+                value: 10,
+                message: "Message must be at least 10 characters",
+              },
+          })}
           placeholder="your message (e.g., We're excited to explore how you can contribute to our team. Let's connect. )" 
           rows={4} 
-          className="shadow-none border-x-0 border-t-0 border-b-2 rounded-none px-0 pb-3 focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-b-2" 
+          className="mt-3 shadow-none border-x-0 border-t-0 border-b-2 rounded-none px-0 pb-3 focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-b-2" 
         />
+        {errors.message && <span className="text-xs text-red-500 mt-2 uppercase font-medium">{errors.message.message}</span>}
       </motion.div>
 
       <motion.div {...animationProps(0.4, isInview)} className="w-full">
-        <Button className="h-11 rounded-none mt-1 w-full">
+        <Button
+          disabled={isSubmitting}
+          type="submit" 
+          className="h-11 rounded-none mt-1 w-full">
           SEND MESSAGE
           <ArrowRight />
         </Button>
