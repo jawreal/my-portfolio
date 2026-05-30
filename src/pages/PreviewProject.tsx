@@ -135,11 +135,11 @@ const PreviewProject = () => {
     </div>
      
     {/* Live preview button  */}
-    <div className="w-full flex flex-col md:flex-row gap-y-3 m:gap-x-3">
-      <a href={project?.link ?? "#"} target="_blank" rel="noopener noreferrer" className="rounded-none shadow-none w-full md:w-auto h-10 ml-auto bg-zinc-950 dark:bg-slate-50 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium text-slate-50 dark:text-slate-950 active:scale-95">
+    <div className="w-full flex flex-col gap-y-3 m:gap-x-3">
+      <a href={project?.link ?? "#"} target="_blank" rel="noopener noreferrer" className="rounded-none shadow-none w-full md:w-auto md:px-4 h-10 ml-auto bg-zinc-950 dark:bg-slate-50 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium text-slate-50 dark:text-slate-950 active:scale-95">
           Live Preview
           <ArrowUpRight className="ml-2"/>
-       </a>            
+       </a>       
     </div>
   </div>
   );
