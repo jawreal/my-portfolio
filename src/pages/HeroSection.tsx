@@ -29,14 +29,14 @@ const HeroSection = () => {
            initial={{ opacity: 0, y: 15 }}
            animate={{ opacity: 1, y: 0 }}
            transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
-           className="w-full flex md:flex-row md:gap-x-4 md:gap-y-0 gap-y-4 flex-col md:pl-4 mt-2">
+           className="w-full flex md:flex-row md:gap-x-4 md:gap-y-0 gap-y-4 flex-col mt-2">
           <Button className="h-11 rounded-none" onClick={onNavigate}>
             CONTACT ME
             <ArrowUpRight className="ml-2"/>
           </Button>
-          <Button variant="outline" className="h-11 border-x-0 md:border-x rounded-none dark:bg-slate-900 shadow-none">
-            DOWNLOAD CV
-           </Button> 
+           <a href="/Jorell.CV.pdf" download="Jorell_CV.pdf" className="rounded-none shadow-none w-full md:w-auto h-11 md:px-4 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm border-y md:border-x border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900 font-medium active:scale-95">
+              DOWNLOAD CV
+           </a> 
          </motion.div>
       </motion.div>
     </section>
