@@ -27,7 +27,7 @@ const Contact = () => {
        <motion.div 
          {...animationProps(0.4, contactInView)}
          className="md:w-[23rem] md:h-[23rem] xl:w-[32rem] xl:h-[32rem] ml-auto hidden md:block relative">
-           <img src="./globe.svg" className="w-full h-full object-contain opacity-80 dark:opacity-60" />
+           <img src="https://res.cloudinary.com/dfr6tbwcf/image/upload/v1780466558/globe_nppbdu.svg" className="w-full h-full object-contain opacity-80 dark:opacity-60" />
            <ImageBadge position="bottom-0 right-0 transform -translate-x-12 -translate-y-11">
               <Fragment>
                 <span className="h-1 w-1 rounded-full bg-purple-500"></span>

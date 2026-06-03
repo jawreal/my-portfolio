@@ -25,9 +25,9 @@ const useDarkMode = () => {
     // For toggling icon based on theme
     if(favicon){
       if(html.classList.contains("dark")){
-        favicon.href = "/jr_dark.png"
+        favicon.href = "https://res.cloudinary.com/dfr6tbwcf/image/upload/v1780466558/jr_dark_eqjfea.png"
       }else{
-        favicon.href = "/jr_light.png"
+        favicon.href = "https://res.cloudinary.com/dfr6tbwcf/image/upload/v1780466556/jr_light_tkpn79.png"
       }
     }
   }, [theme]);

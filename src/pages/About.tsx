@@ -19,7 +19,7 @@ const About = () => {
          {...animationProps(0.8, imageInView)}
          className="h-full md:self-center order-2 md:ml-auto">
          <div className="rounded-md relative w-[calc(100%-2rem)] mx-auto md:w-72 md:h-72 z-10">
-           <img src="./me2.jpg" className="w-full h-72 object-cover border border-slate-500 dark:border-slate-700" />
+           <img src="https://res.cloudinary.com/dfr6tbwcf/image/upload/v1780466584/me2_ez7wl5.jpg" className="w-full h-72 object-cover border border-slate-500 dark:border-slate-700" />
            <ImageBadge position="top-1 left-0 transform -translate-x-4 -translate-y-4">
               <Fragment>
                 <span className="h-1 w-1 rounded-full bg-purple-500"></span>

@@ -63,7 +63,7 @@ const projectsData: IProjectsData[] = [
   {
     id: 1, 
     title: "CSJDM-PNP Logistic Dept - Firearm Tracker",
-    imgSrc: "/pnp_landing.png", 
+    imgSrc: "https://res.cloudinary.com/dfr6tbwcf/image/upload/v1780466573/pnp_landing_ite6uk.png", 
     stacks: projectStacks.pnpFirearm,
     description: "A web-based firearm records management system developed for the Logistics Department of the Philippine National Police — City of San Jose del Monte, Bulacan. The system provides secure registration, tracking, and auditing of both long and short firearms assigned within the unit.", 
     type: "Internship Project", 
@@ -80,7 +80,7 @@ const projectsData: IProjectsData[] = [
   {
     id: 2,
     title: "CDSGA Thesis Archive with AI Chatbot Assistance", 
-    imgSrc: "/archive_landing.png", 
+    imgSrc: "https://res.cloudinary.com/dfr6tbwcf/image/upload/v1780466565/archive_landing_jmufgs.png", 
     stacks: projectStacks.thesisArchive, 
     description: "Thesis Vault is designed to meet the research and online thesis archiving needs of students and researchers from Colegio de San Gabriel Arcangel (CDSGA). It leverages AI-powered tools to enable smarter organization, faster retrieval, and advanced semantic search for academic abstracts and theses.", 
     type: "Capstone Project", 
@@ -98,7 +98,7 @@ const projectsData: IProjectsData[] = [
   {
     id: 3, 
     title: "Kaypian Barangay Management System", 
-    imgSrc: "/brgy_landing.png", 
+    imgSrc: "https://res.cloudinary.com/dfr6tbwcf/image/upload/v1780466573/brgy_landing_j3jggn.png", 
     stacks: projectStacks.brgyKaypian,
     description: "A comprehensive barangay management system for Kaypian in the City of San Jose Del Monte, Bulacan. The system manages borrowed items, community member registration, and online event requests.", 
     type: "Capstone Project - Client Commission", 
@@ -118,7 +118,7 @@ const projectsData: IProjectsData[] = [
   {
     id: 4, 
     title: "Neuro-Quiz - AI-Generated Interactive Quiz",
-    imgSrc: "/quiz_landing.png", 
+    imgSrc: "https://res.cloudinary.com/dfr6tbwcf/image/upload/v1780466558/quiz_landing_vvmyrh.png", 
     stacks: projectStacks.quizGen,
     description: "An AI-powered platform that enables users to create interactive quizzes based on custom prompts. The system generates dynamic quiz content tailored to user specifications.", 
     type: "Personal Project", 
