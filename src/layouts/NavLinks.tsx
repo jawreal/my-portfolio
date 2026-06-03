@@ -49,9 +49,9 @@ const NavLinks = ({ open, onOpenChange }: IProps) => {
       </li>
       
       {/* Must only be visible to big devices */}
-      <li className="hidden md:block px-4 mt-2">
+      <li className="hidden md:block pl-4 mt-2">
         <ThemeSettings>
-          <Button variant="ghost">
+          <Button variant="ghost" className="!p-0">
             <Settings />
           </Button>
         </ThemeSettings>
