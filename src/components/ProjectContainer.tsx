@@ -5,6 +5,7 @@ import { type IProjectsData } from "@/lib/projectsData";
 import { useMemo, useCallback, lazy, Suspense } from "react";
 import { useNavigate } from "react-router-dom";
 const Image = lazy(() => import("@/components/Image"));
+import { formatNumber } from "@/lib/formatNumber";
 
 
 interface IProps extends IProjectsData {
@@ -13,10 +14,7 @@ interface IProps extends IProjectsData {
 
 const ProjectContainer = ({ projectNumber, title, imgSrc, link }: IProps) => {
   const navigate = useNavigate();
-  const formatNumber = useMemo(() => {
-    // Add zero to a whole number (e.g., 01, 02, etc.)
-    return projectNumber.toString().padStart(2, "0");
-  }, [projectNumber]);
+  const formattedNumber = useMemo(() => formatNumber(projectNumber), [projectNumber]);
   
   const onNavigate = useCallback(() => {
      navigate(`/preview/${projectNumber}`)
@@ -26,7 +24,7 @@ const ProjectContainer = ({ projectNumber, title, imgSrc, link }: IProps) => {
   <Card className="rounded-none p-0 border shadow-none min-w-xl ">
     <CardContent className="p-0 flex flex-col">
       <div className="h-44 md:h-60 xl:h-72 w-full relative border-b border-slate-100 dark:border-slate-900">
-        <span className="h-10 w-10 font-extrabold bg-zinc-950/80 absolute top-3 left-3 border border-zinc-900 flex items-center text-sm justify-center text-slate-200">{formatNumber}</span>
+        <span className="h-10 w-10 font-extrabold bg-zinc-950/80 absolute top-3 left-3 border border-zinc-900 flex items-center text-sm justify-center text-slate-200">{formattedNumber}</span>
          <Suspense fallback={<Skeleton className="w-full h-full" />}>
            <Image url={imgSrc} className="w-full h-full object-cover" />
          </Suspense>
