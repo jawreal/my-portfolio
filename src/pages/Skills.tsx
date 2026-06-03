@@ -19,7 +19,7 @@ const Skills = () => {
        <p className="text-slate-500 dark:text-slate-400 md:max-w-[24rem]">My stack & tools for building modern, robust web apps as a full-stack dev.
        </p>
      </motion.div>
-     <div ref={skillsRef} className="flex w-full flex-col gap-y-8 md:max-w-xl">
+     <div ref={skillsRef} className="flex w-full flex-col gap-y-8 md:max-w-xl xl:max-w-5xl">
      {
        Object.entries(stacks).map(([category, stackItems], parentIndex: number) => (
        <div key={category} className="flex flex-col gap-y-3">
