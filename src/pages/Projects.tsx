@@ -15,12 +15,12 @@ const Projects = () => {
        {...animationProps(0.4, projectInView)}
        className="flex flex-col gap-y-2">
        <h1 className="text-4xl font-extrabold dark:text-slate-200">MY PROJECTS</h1>
-       <p className="text-slate-500 dark:text-slate-400 md:max-w-[25rem]">Explore my featured projects showcasing innovative design and development solutions
+       <p className="text-slate-500 dark:text-slate-400 md:max-w-xl">Explore my featured projects showcasing innovative design and development solutions
        </p>
      </motion.div>
      <div ref={projectRef} className="flex">
        <div
-         className="grid grid-cols-1 md:grid-cols-2 md:gap-x-6 gap-y-6 max-w-5xl">
+         className="grid grid-cols-1 md:grid-cols-2 md:gap-x-6 gap-y-6 max-w-7xl">
          {
           projectsData.map((project: IProjectsData, idx: number) => (
            <motion.div 

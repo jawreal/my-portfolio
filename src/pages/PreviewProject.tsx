@@ -58,7 +58,7 @@ const PreviewProject = () => {
   }
   
   return (
-  <div id="preview" className="w-full flex flex-col py-10 px-6 md:px-20 gap-y-6 border-t dark:border-slate-900 relative">
+  <div id="preview" className="w-full flex flex-col py-10 px-6 md:px-20 gap-y-6 border-t dark:border-slate-900 relative max-w-7xl">
     {/* Project ID number */}
     {project?.id && <h1 className="absolute top-12 md:top-14 right-2 md:right-20 text-9xl font-ultra text-slate-200/80 dark:text-slate-900/75 z-1">{"0" + project.id}</h1>}
   
@@ -67,7 +67,7 @@ const PreviewProject = () => {
       {...animationProps(0.1, false, true)}
       className="flex flex-col gap-y-4 relative z-10">
       <h1 className="text-3xl md:text-5xl font-ultra dark:text-slate-200 leading-none">{(project?.title ?? "No title found")?.toUpperCase()}</h1>
-      <p className="text-slate-500 dark:text-slate-400 max-w-2xl">{project?.description ?? "No description found"}</p>
+      <p className="text-slate-500 dark:text-slate-400 max-w-5xl">{project?.description ?? "No description found"}</p>
     </motion.div>
     
     {/* Project type */} 
@@ -92,7 +92,7 @@ const PreviewProject = () => {
           {...animationProps(0.4, false, true)}>
          <span className="font-extrabold dark:text-slate-200 text-sm">FEATURES</span> 
        </motion.div>
-       <ul className="w-full flex flex-col gap-y-2 max-w-2xl">
+       <ul className="w-full flex flex-col gap-y-2 max-w-5xl">
        {project?.features?.map((feature: string, idx: number) => (
        <li key={idx}>
          <motion.div 
@@ -114,7 +114,7 @@ const PreviewProject = () => {
      </motion.div>
      
     {/* Tech stacks */}
-    <div className="w-full flex flex-col gap-y-3 max-w-2xl">
+    <div className="w-full flex flex-col gap-y-3">
       <span className="font-extrabold dark:text-slate-200 text-sm">TECH STACKS</span> 
         <div ref={previewRef} className="flex flex-wrap flex-shrink-0 w-full gap-3">
           {projectStacks?.map((stack: IStacks, idx: number) => {
@@ -136,7 +136,7 @@ const PreviewProject = () => {
      
     {/* Live preview button  */}
     <div className="w-full flex flex-col gap-y-3 m:gap-x-3">
-      <a href={project?.link ?? "#"} target="_blank" rel="noopener noreferrer" className="rounded-none shadow-none w-full md:w-auto md:px-4 h-10 ml-auto bg-zinc-950 dark:bg-slate-50 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium text-slate-50 dark:text-slate-950 active:scale-95">
+      <a href={project?.link ?? "#"} target="_blank" rel="noopener noreferrer" className="rounded-none shadow-none w-full md:w-auto md:px-4 h-10 md:self-start bg-zinc-950 dark:bg-slate-50 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium text-slate-50 dark:text-slate-950 active:scale-95">
           Live Preview
           <ArrowUpRight className="ml-2"/>
        </a>       

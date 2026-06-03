@@ -25,14 +25,14 @@ const ProjectContainer = ({ projectNumber, title, imgSrc, link }: IProps) => {
   return (
   <Card className="rounded-none p-0 border shadow-none min-w-xl ">
     <CardContent className="p-0 flex flex-col">
-      <div className="h-44 w-full relative border-b border-slate-100 dark:border-slate-900">
+      <div className="h-44 md:h-60 xl:h-72 w-full relative border-b border-slate-100 dark:border-slate-900">
         <span className="h-10 w-10 font-extrabold bg-zinc-950/80 absolute top-3 left-3 border border-zinc-900 flex items-center text-sm justify-center text-slate-200">{formatNumber}</span>
          <Suspense fallback={<Skeleton className="w-full h-full" />}>
            <Image url={imgSrc} className="w-full h-full object-cover" />
          </Suspense>
       </div>
       <div className="flex flex-col gap-y-3 p-6">
-         <h5 className="text-xl font-bold dark:text-slate-200">{title}</h5>
+         <h5 className="text-xl font-bold dark:text-slate-200 max-w-xs">{title}</h5>
          <div className="w-full flex flex-col gap-y-3 [&_button]:h-10">
            <Button className="rounded-none" onClick={onNavigate}>
              View Project
