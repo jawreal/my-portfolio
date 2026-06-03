@@ -36,7 +36,7 @@ const About = () => {
        </motion.div> 
        
        {/* About description */}
-       <div ref={imageRef} className="w-full pt-2 md:max-w-[25rem] mb-5">
+       <div ref={imageRef} className="w-full pt-2 md:max-w-sm xl:max-w-md mb-5">
           <motion.h5
            {...animationProps(0.6, imageInView)}
            className="font-mono text-slate-500 dark:text-slate-400">ABOUT JORELL</motion.h5> 
