@@ -9,7 +9,7 @@ const Main = () => {
   return (
   <Fragment>
     <div className="w-full flex flex-col items-center max-w-7xl">
-       <main className="w-full flex flex-col min-h-screen relative">
+       <main className="w-full flex flex-col relative">
           <HeroSection />
        </main> 
        <About /> 
