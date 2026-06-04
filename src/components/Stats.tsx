@@ -13,11 +13,11 @@ const Stats = ({ title, description, statNumber }: IProps) => {
  const formattedNumber = useMemo(() => formatNumber(statNumber), [statNumber]);
  
  return (
- <Card className={cn("rounded-none z-10 border-x-0", statNumber === 2 && "md:border-x")}>
+ <Card className={cn("rounded-none z-10 border-x-0 shadow-none bg-slate-100/60 dark:bg-slate-950", statNumber === 2 && "md:border-x")}>
     <CardContent className="dark:border-slate-900/60 px-3 py-4">
      <div className="w-full flex flex-col gap-y-2 relative">
         <div className="flex gap-x-3 items-center">
-          <h1 className="text-sm font-extrabold text-slate-300/80 dark:text-slate-500/80">{formattedNumber}</h1> 
+          <h1 className="text-sm font-extrabold text-slate-500/80">{formattedNumber}</h1> 
           <h1 className="font-mono text-xs">{title}</h1>
         </div>
         <p className="text-slate-500 dark:text-slate-400 text-xs max-w-xs">{description}</p>

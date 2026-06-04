@@ -39,10 +39,10 @@ const About = () => {
        <div ref={imageRef} className="w-full pt-2 md:max-w-sm xl:max-w-md mb-5">
           <motion.h5
            {...animationProps(0.6, imageInView)}
-           className="font-mono text-slate-500 dark:text-slate-400">ABOUT JORELL</motion.h5> 
+           className="font-mono text-slate-500 dark:text-slate-400 text-xs">ABOUT JORELL</motion.h5> 
           <motion.h1
            {...animationProps(0.8, imageInView)}
-           className="text-4xl font-extrabold dark:text-slate-200 mt-2 mb-2">THE DEVELOPER BEHIND THE CODE</motion.h1>
+           className="text-3xl font-extrabold uppercase dark:text-slate-200 mt-2 mb-2 leading-9">The developer behind the code</motion.h1>
           <motion.div 
            {...animationProps(1, imageInView)}
            className="flex flex-col gap-y-3 [&_p]:text-slate-500  [&_p]:dark:text-slate-400">
