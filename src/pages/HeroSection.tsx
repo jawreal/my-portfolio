@@ -18,7 +18,7 @@ const HeroSection = () => {
     <section className="w-full flex-1 px-6 flex flex-col md:px-20 border-t dark:border-slate-900 relative">
       <motion.div 
         {...animationProps(0.3, false, true)}
-        className="flex-1 border-x dark:border-slate-900 flex flex-col gap-y-4 pt-20 md:pt-16 pb-10">
+        className="flex-1 border-x dark:border-slate-900 flex flex-col gap-y-4 pt-20 md:pt-16 pb-10 relative">
         <div className="flex flex-col gap-y-3 max-w-[30rem] mt-3">
           <div className="text-5xl md:text-7xl xl:text-7xl font-ultra leading-10 relative" >
              <p className="dark:text-slate-200 relative z-10">BUILDING ROBUST WEB SOLUTIONS</p>
@@ -39,7 +39,7 @@ const HeroSection = () => {
          </motion.div>
       </motion.div>
       <div className="w-full flex flex-col gap-y-5 md:gap-y-4 border-x dark:border-slate-900 pb-4">
-         <hr />
+         <hr className="border-slate-200 dark:border-slate-900" />
          <div className="grid grid-cols-1 md:grid-cols-3 gap-y-4">
            {myStats.map((stat: MyStats, idx: number) => (
              <motion.div {...animationProps(idx * 0.4, false, true)}>
