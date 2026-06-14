@@ -22,7 +22,7 @@ const ProjectContainer = ({ projectNumber, title, imgSrc, description, stacks }:
   
   return (
   <Link to={`/preview/${projectNumber}`}>
-    <Card className="rounded-none p-0 border dark:border-slate-800/50 shadow-none min-w-xl hover:border-slate-950 dark:hover:border-slate-400 transition transition-all">
+    <Card className="rounded-none p-0 border dark:border-slate-800/50 shadow-none min-w-xl hover:border-slate-950 dark:hover:border-slate-400 transition transition-all cursor-pointer">
       <CardContent className="p-0 flex flex-col p-5">
         <div className="h-44 md:h-60 xl:h-72 w-full relative border border-slate-100 dark:border-slate-900">
            <Suspense fallback={<Skeleton className="w-full h-full" />}>

@@ -12,7 +12,8 @@ const About = () => {
   
   
   return (
-  <section className="w-full flex-1 px-6 flex flex-col md:px-20 border-y dark:border-slate-900 py-10" id="about" >
+  <section className="w-full flex justify-center">
+   <div className="w-full flex-1 px-6 flex flex-col md:px-20 border-y dark:border-slate-900 py-10 max-w-7xl" id="about" >
      <div className="flex-1 dark:border-slate-900 flex flex-col md:flex-row gap-y-4 md:gap-x-4">
        {/* Profile image */}
        <motion.div
@@ -55,6 +56,7 @@ const About = () => {
           </motion.div>
        </div>
      </div>
+    </div>
   </section>
   )
 }

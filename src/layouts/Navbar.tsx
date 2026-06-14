@@ -21,22 +21,24 @@ const Navbar = ({ navInview }: IProps) => {
   }
   
   return (
-  <div className="w-full flex flex-col items-center max-w-7xl relative sticky top-0 z-20">
-    <nav className="w-full px-6 h-24 md:px-20">
-      {/* Container with border */}
-      <section className={cn("h-full dark:border-slate-900 flex items-center", notInPreviewPage && "")} >
-        <Initials isVisible={navInview} />
-        <NavLinks />
-        <MobileMenu
-         open={openMobileMenu} 
-         onOpenChange={setOpenMobileMenu} />
+  <div className="w-full flex justify-center relative sticky top-0 z-20">
+     <div className="w-full flex flex-col items-center max-w-7xl">
+       <nav className="w-full px-6 h-24 md:px-20">
+         {/* Container with border */}
+         <section className={cn("h-full dark:border-slate-900 flex items-center", notInPreviewPage && "")} >
+           <Initials isVisible={navInview} />
+           <NavLinks />
+           <MobileMenu
+             open={openMobileMenu} 
+             onOpenChange={setOpenMobileMenu} />
        
-        {/* Show hamburger button in smaller device */}
-        <Button variant="ghost" className="md:hidden ml-auto" onClick={onOpenMenu}>
-          <Menu className="dark:text-slate-200" />
-        </Button>
-      </section>
-    </nav>
+           {/* Show hamburger button in smaller device */}
+           <Button variant="ghost" className="md:hidden ml-auto" onClick={onOpenMenu}>
+           <Menu className="dark:text-slate-200" />
+         </Button>
+       </section>
+      </nav>
+    </div>
   </div>
   )
 }

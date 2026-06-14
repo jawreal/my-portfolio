@@ -12,7 +12,8 @@ const Contact = () => {
   });
   
   return (
-  <section className="w-full px-6 flex flex-col md:px-20 py-20 gap-y-10" id="contact">
+  <section className="w-full flex justify-center">
+   <div className="w-full px-6 flex flex-col md:px-20 py-20 gap-y-10 max-w-7xl" id="contact">
      <motion.div 
        {...animationProps(0.4, contactInView)}
        className="flex flex-col gap-y-2">
@@ -41,7 +42,8 @@ const Contact = () => {
               </Fragment>
            </ImageBadge>
         </motion.div>
-     </div>
+      </div>
+    </div>
   </section>
   )
 }

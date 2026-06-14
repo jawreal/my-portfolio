@@ -13,8 +13,9 @@ const NotFound = () => {
   }
   
   return (
-    <div className="w-full min-h-screen flex max-w-7xl">
-       <section className="flex-1 px-6 flex flex-col md:px-20 border-t dark:border-slate-900 md:justify-center">
+  <div className="w-full flex justify-center border-t dark:border-slate-900">
+     <div className="w-full min-h-screen flex max-w-7xl">
+       <section className="flex-1 px-6 flex flex-col md:px-20 md:justify-center">
          <div className="flex-1 flex flex-col gap-y-4 border-x dark:border-slate-900 md:justify-center md:items-center md:text-center">
            <motion.div 
              {...animationProps(0.1, false, true)}
@@ -33,6 +34,7 @@ const NotFound = () => {
          </div>
        </section>
     </div>
+  </div>
   )
 }
 

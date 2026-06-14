@@ -23,7 +23,7 @@ const Layout = () => {
   }, [location]);
 
   return (
-  <div className="w-full flex flex-col items-center bg-slate-100/80 dark:bg-slate-950 relative">
+  <div className="w-full flex flex-col bg-slate-100/80 dark:bg-slate-950 relative">
     <div ref={navRef} className="h-1" />
     <Navbar navInview={navInview} />    
     <Outlet />

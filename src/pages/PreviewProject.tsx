@@ -58,7 +58,8 @@ const PreviewProject = () => {
   }
   
   return (
-  <div id="preview" className="w-full flex flex-col py-10 px-6 md:px-20 gap-y-6 border-t dark:border-slate-900 relative max-w-7xl">
+  <div className="w-full flex justify-center border-t dark:border-slate-900">
+   <div id="preview" className="w-full flex flex-col py-10 px-6 md:px-20 gap-y-6 relative max-w-7xl">
     {/* Project ID number */}
     {project?.id && <h1 className="absolute top-12 md:top-14 right-2 md:right-20 text-9xl font-ultra text-slate-200/80 dark:text-slate-900/75 z-1">{"0" + project.id}</h1>}
   
@@ -139,7 +140,8 @@ const PreviewProject = () => {
       <a href={project?.link ?? "#"} target="_blank" rel="noopener noreferrer" className="rounded-none shadow-none w-full md:w-auto md:px-4 h-10 md:self-start bg-zinc-950 dark:bg-slate-50 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium text-slate-50 dark:text-slate-950 active:scale-95">
           Live Preview
           <ArrowUpRight className="ml-2"/>
-       </a>       
+        </a>       
+      </div>
     </div>
   </div>
   );

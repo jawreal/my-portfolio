@@ -15,7 +15,8 @@ const HeroSection = () => {
   };
   
   return (
-    <section className="w-full flex-1 px-6 flex flex-col md:px-20 border-t dark:border-slate-900 relative">
+  <section className="w-full flex flex-col items-center border-t dark:border-slate-900">
+    <div className="w-full px-6 flex flex-col md:px-20 relative max-w-7xl">
       <motion.div 
         {...animationProps(0.3, false, true)}
         className="flex-1 border-x dark:border-slate-900 flex flex-col gap-y-4 pt-20 md:pt-16 pb-10 relative">
@@ -42,15 +43,16 @@ const HeroSection = () => {
          <hr className="border-slate-200 dark:border-slate-900" />
          <div className="grid grid-cols-1 md:grid-cols-3 gap-y-4">
            {myStats.map((stat: MyStats, idx: number) => (
-             <motion.div {...animationProps(idx * 0.4, false, true)}>
-               <Stats key={idx} title={stat.title} description={stat.description}
+             <motion.div {...animationProps(idx * 0.4, false, true)} key={idx}>
+               <Stats title={stat.title} description={stat.description}
                 statNumber={idx + 1}
                />
              </motion.div>
            ))}
          </div>
-      </div>
-    </section>
+       </div>
+     </div>
+   </section>
   )
 }
 

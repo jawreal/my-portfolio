@@ -11,7 +11,8 @@ const Skills = () => {
   });
 
   return (
-  <section className="w-full px-6 flex flex-col md:px-20 py-20 gap-y-6 border-y dark:border-slate-900" id="skills">
+  <section className="w-full flex justify-center border-y dark:border-slate-900">
+   <div className="w-full px-6 flex flex-col md:px-20 py-20 gap-y-6 border-y dark:border-slate-900 max-w-7xl" id="skills">
      <motion.div 
        {...animationProps(0.4, skillsInView)}
        className="w-full flex flex-col gap-y-2">
@@ -43,9 +44,10 @@ const Skills = () => {
             </motion.div>
             );
           })}
-        </div>
-      </div>
-     ))}
+         </div>
+       </div>
+      ))}
+     </div>
     </div>
   </section>
   )

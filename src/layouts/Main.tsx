@@ -8,8 +8,8 @@ import { Fragment } from "react";
 const Main = () => {
   return (
   <Fragment>
-    <div className="w-full flex flex-col items-center max-w-7xl">
-       <main className="w-full flex flex-col relative">
+    <div className="w-full flex flex-col items-center">
+       <main className="w-full">
           <HeroSection />
        </main> 
        <About /> 
