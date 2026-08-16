@@ -1,3 +1,8 @@
+interface DemoCredentials {
+  user: string;
+  password: string;
+}
+
 interface IProjectsData {
   id: number;
   title: string; 
@@ -8,6 +13,7 @@ interface IProjectsData {
   stacks: string[];
   features: string[];
   link: string;
+  credentials: DemoCredentials;
 }
 
 const projectStacks: Record<string, string[]> = {
@@ -59,6 +65,7 @@ const projectStacks: Record<string, string[]> = {
   ],
 } as const;
 
+
 const projectsData: IProjectsData[] = [
   {
     id: 1, 
@@ -75,7 +82,11 @@ const projectsData: IProjectsData[] = [
       "Unique QR code generation for each registered firearm with system-restricted scanning to prevent unauthorized external access.",
       "Comprehensive audit logging system that automatically tracks and records every action for full accountability and review."
     ], 
-    link: "https://pnp-firearm-tracker.onrender.com/auth/login"
+    link: "https://pnp-firearm-tracker.onrender.com/auth/login", 
+    credentials: {
+      user: "jorellrelleve@gmail.com",
+      password: "jawreal@123",
+    }
   }, 
   {
     id: 2,
@@ -93,7 +104,11 @@ const projectsData: IProjectsData[] = [
       "Seamless infinite scrolling experience inspired by modern social platforms.",
       "Comprehensive admin dashboard featuring analytics, user insights, and platform statistics."
     ], 
-    link: "https://cdsga-thesis-vault.me/auth/landing-page"
+    link: "https://cdsga-thesis-vault.me/auth/landing-page", 
+    credentials: {
+      user: "A20202021",
+      password: "12345678",
+    } 
   }, 
   {
     id: 3, 
@@ -113,7 +128,11 @@ const projectsData: IProjectsData[] = [
       "Real-time data statistics displayed on the admin dashboard.",
       "Two-person collaborative project."
     ], 
-    link: "https://barangay-management-system-gohj.onrender.com/login"
+    link: "https://barangay-management-system-gohj.onrender.com/login", 
+    credentials: {
+      user: "ichi@mail.com",
+      password: "12345678",
+    }
   }, 
   {
     id: 4, 
@@ -132,7 +151,11 @@ const projectsData: IProjectsData[] = [
       "Quiz history tracking for all user-created quizzes.",
       "Automatic scoring with detailed evaluation of correct and incorrect answers."
     ], 
-    link: "https://neuro-quiz.onrender.com/auth"
+    link: "https://neuro-quiz.onrender.com/auth", 
+    credentials: {
+      user: "john.doe@123",
+      password: "john.doe@123",
+    }
   }
 ]
 
