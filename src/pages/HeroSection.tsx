@@ -34,7 +34,7 @@ const HeroSection = () => {
             CONTACT ME
             <ArrowUpRight className="ml-2"/>
           </Button>
-           <a href="/Jorell.CV.pdf" download="Jorell_CV.pdf" className="rounded-none shadow-none w-full md:w-auto h-11 md:px-4 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm border-y md:border-x border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900 font-medium active:scale-95">
+           <a href="/CV_Latest.pdf" download="CV_Latest.pdf" className="rounded-none shadow-none w-full md:w-auto h-11 md:px-4 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm border-y md:border-x border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900 font-medium active:scale-95">
               DOWNLOAD CV
            </a> 
          </motion.div>
