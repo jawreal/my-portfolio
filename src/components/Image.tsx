@@ -6,7 +6,11 @@ interface ImageProps {
 }
 
 const Image = ({ url, className }: ImageProps) => {
-  return <>{url && <img src={url} alt="img" className={className} />}</>;
+  if (!url) return null;
+
+  const optimizedSrc = url.replace('/upload/', '/upload/f_auto,q_auto:good,w_1200/');
+
+  return <img src={optimizedSrc} alt="img" className={className} />;
 };
 
 export default memo(Image);

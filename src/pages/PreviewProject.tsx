@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import { projectsData, type IProjectsData } from "@/lib/projectsData";
 import { combinedStacks, type IStacks } from "@/lib/techStacks";
 import { useInView } from "react-intersection-observer";
@@ -9,6 +9,8 @@ import { animationProps } from "@/lib/animationProps";
 import { ArrowUpRight } from "lucide-react";
 import { useLocation } from "react-router-dom";
 import NotFound from "@/pages/NotFound";
+import { Skeleton } from "@/components/ui/skeleton";
+const Image = lazy(() => import("@/components/Image"));
 
 interface IParams {
   [key: string]: string | undefined;
@@ -140,10 +142,10 @@ const PreviewProject = () => {
           {...animationProps(0.5, previewInView, true)}
           className="w-full h-44 md:h-auto border"
         >
-          <img
-            src={`${project?.imgSrc}`}
-            className="w-full h-full object-cover"
-          />
+           <Suspense fallback={<Skeleton className="w-full h-full" />}>
+             <Image url={`${project?.imgSrc}`}
+              className="w-full h-full object-cover" />
+           </Suspense>
         </motion.div>
 
         {/* Tech stacks */}
