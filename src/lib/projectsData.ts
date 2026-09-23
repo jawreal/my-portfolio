@@ -85,7 +85,7 @@ const projectsData: IProjectsData[] = [
     link: "https://pnp-firearm-tracker.onrender.com/auth/login", 
     credentials: {
       user: "jorellrelleve@gmail.com",
-      password: "jawreal@123",
+      password: "demo@123",
     }
   }, 
   {
@@ -130,7 +130,7 @@ const projectsData: IProjectsData[] = [
     ], 
     link: "https://barangay-management-system-gohj.onrender.com/login", 
     credentials: {
-      user: "ichi@mail.com",
+      user: "demo@mail.com",
       password: "12345678",
     }
   }, 
@@ -153,8 +153,8 @@ const projectsData: IProjectsData[] = [
     ], 
     link: "https://neuro-quiz.onrender.com/auth", 
     credentials: {
-      user: "john.doe@123",
-      password: "john.doe@123",
+      user: "demo_user",
+      password: "12345678",
     }
   }
 ]
