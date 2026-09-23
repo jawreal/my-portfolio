@@ -20,6 +20,8 @@ import {
   SiPostman, 
   SiCloudflare
 } from 'react-icons/si';
+import { AiOutlineOpenAI } from "react-icons/ai";
+
 
 interface IStacks {
   id: string;
@@ -54,6 +56,7 @@ const stacks: Record<string, IStacks[]> = {
     { id: "t2", icon: SiGithub,  text: "GitHub",  color: "text-[#000000] dark:text-slate-200" },
     { id: "t3", icon: SiPostman, text: "Postman", color: "text-[#FF6C37]" },
     { id: "t4", icon: FaFigma,   text: "Figma",   color: "text-[#000000] dark:text-slate-200" },
+    { id: "t5", icon: AiOutlineOpenAI,   text: "OpenAI",   color: "text-[#000000] dark:text-slate-200" },
   ],
 } as const;
 

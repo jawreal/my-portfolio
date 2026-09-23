@@ -40,6 +40,7 @@ const projectStacks: Record<string, string[]> = {
     "b5", // MongoDB
     "b3", // Supabase
     "f8", // shadcn/ui
+    "t5", // AI 
   ],
   brgyKaypian: [
     "f7", // Vite
@@ -62,6 +63,7 @@ const projectStacks: Record<string, string[]> = {
     "b5",  // MongoDB
     "f8",  // shadcn/ui
     "f10", // Zustand
+    "t5", // AI 
   ],
 } as const;
 
